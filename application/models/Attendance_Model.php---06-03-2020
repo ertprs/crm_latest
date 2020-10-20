@@ -1,0 +1,142 @@
+<?php
+class Attendance_Model extends CI_Model {
+	function __construct() {
+		parent::__construct();
+	}
+
+	function  get_attendance($current_date) {
+        $this->db->join('attendance as a','a.staff_id = s.id AND a.attendance_date = "'.$current_date.'"','left' );
+        $this->db->order_by('s.id','asc');
+        $query = $this->db->get('staff as s');
+        if($query->num_rows()>0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+    
+    function getmonthlyattendance($department,$from_date,$to_date){
+        
+        $sql = "SELECT *,st.staffname FROM staff_attendance as sa LEFT JOIN staff as st ON st.id = sa.staff_id WHERE  sa.attendance_date >= '$from_date' AND sa.attendance_date <= '$to_date'";
+      
+      if($department != ''){
+          $sql .= " AND sa.department = '$department'";
+      }
+      
+        $res = $this->db->query($sql);
+       
+        $result = $res->result_array();
+        
+        return $result;
+        
+    }
+    
+     function getmonthlytimings($department,$from_date,$to_date){
+         
+         $sql = "SELECT * FROM staff_attendance_timings as sa WHERE  sa.attendance_date >= '$from_date' AND sa.attendance_date <= '$to_date'";
+        
+         if($department != ''){
+          $sql .= " AND sa.department = '$department'";
+      }
+      
+          $res = $this->db->query($sql);
+       
+        $result = $res->result_array();
+        
+        return $result;
+        
+    }
+
+    function get_all_dept_staff($department_id) {
+		$this->db->select( '*,departments.name as department, staff.id as id' );
+		$this->db->join( 'departments', 'staff.department_id = departments.id', 'left' );
+		return $this->db->get_where( 'staff', array( 'department_id' => $department_id ) )->result_array();
+	}
+
+    function  get_staff() {
+        $query = $this->db->get('staff as s');
+        if($query->num_rows()>0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+
+    function  save($data) {
+        $query = $this->db->insert('staff_attendance', $data); 
+        if($query){ return true; } else { return false; }
+    }
+    
+     function  savetimings($data) {
+        $query = $this->db->insert('staff_attendance_timings', $data); 
+        if($query){ return true; } else { return false; }
+    }
+
+
+function update_attendance($id,$params){
+    
+    	$this->db->where( 'staff_id', $id );
+    		$this->db->where( 'department', $params['department']);
+    			$this->db->where( 'attendance_date', $params['attendance_date'] );
+    	
+		$this->db->update( 'staff_attendance', $params);
+}
+
+function updatetimings($id,$params){
+   
+    	$this->db->where( 'staff_id', $id );
+    		$this->db->where( 'department', $params['department']);
+    			$this->db->where( 'attendance_date', $params['attendance_date'] );
+    	
+		$this->db->update( 'staff_attendance_timings', $params);
+}
+    function  get_today($staff_id,$current_date) {
+        $this->db->where('staff_id',$staff_id );
+        $this->db->where('attendance_date',$current_date );
+        $query = $this->db->get('attendance');
+        return $query->num_rows();
+    }
+    
+    function get_attendance_details($department,$attendance_date){
+        
+    $month = date("m", strtotime($attendance_date));
+	$day = date("d", strtotime($attendance_date));
+
+	$degrees = array();
+	$dayy = 'day_'.(int)$day;
+	$sql = "SELECT staff_id, `{$dayy}` FROM staff_attendance WHERE attendance_date='$attendance_date'  AND department='$department'";
+	$ret = $this->db->query($sql, "could not retrieve security roles");
+//	while($get_des=$ret->result_array()){
+	    foreach($ret->result_array() as $get_des){
+ 
+	    //print_r($get_des);
+	    
+		$degrees[$get_des['staff_id']] = $get_des[$dayy];	
+	}
+	return $degrees;
+        
+    }
+    
+    
+    function get_attendance_timings($department,$attendance_date){
+        
+    $month = date("m", strtotime($attendance_date));
+	$day = date("d", strtotime($attendance_date));
+
+	$degrees = array();
+	$dayy = 'day_'.(int)$day;
+	$sql = "SELECT staff_id, `{$dayy}` FROM staff_attendance_timings WHERE attendance_date='$attendance_date'  AND department='$department'";
+	$ret = $this->db->query($sql, "could not retrieve security roles");
+//	while($get_des=$ret->result_array()){
+	    foreach($ret->result_array() as $get_des){
+ 
+	    //print_r($get_des);
+	    
+		$degrees[$get_des['staff_id']] = $get_des[$dayy];	
+	}
+	return $degrees;
+        
+    }
+   
+   
+}

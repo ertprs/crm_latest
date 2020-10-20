@@ -1,0 +1,289 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Quotation Sent Report</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>
+                        <thead>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Sale Type</th>
+                                <th>Party</th>
+                                <th>Offer Price</th>
+                                <th>Purchase Price</th>
+                                <th>Service Price</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">1</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">2</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">3</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">4</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">5</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">6</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">7</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">8</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">9</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rajesh netha</td>
+                                <td class="ng-binding">4000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">4000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">10</td>							
+                                <td class="ng-binding">Vochoure</td>
+                                <td class="ng-binding">antony chennai</td>
+                                <td class="ng-binding">16000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">11</td>							
+                                <td class="ng-binding">Vochoure</td>
+                                <td class="ng-binding">antony chennai</td>
+                                <td class="ng-binding">11000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">12</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">antony chennai</td>
+                                <td class="ng-binding">6000</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">6000</td>
+                                <td class="ng-binding">26/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">13</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">rahul learnwell</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">27/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">14</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">royal bhuvneshwar</td>
+                                <td class="ng-binding">17000</td>
+                                <td class="ng-binding">14000</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">15</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">PURUSHOTTAM</td>
+                                <td class="ng-binding">17000</td>
+                                <td class="ng-binding">14000</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">16</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">raj mohan</td>
+                                <td class="ng-binding">COST+1900</td>
+                                <td class="ng-binding">COST+</td>
+                                <td class="ng-binding">1900</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">17</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">raj mohan</td>
+                                <td class="ng-binding">COST+3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">18</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">raj mohan</td>
+                                <td class="ng-binding">COST+3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">19</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">raj mohan</td>
+                                <td class="ng-binding">COST+3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">29/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">20</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">JAYANTA KOLKATA</td>
+                                <td class="ng-binding">14000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">31/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">21</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">MOHIT</td>
+                                <td class="ng-binding">cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">31/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">22</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">MOHIT</td>
+                                <td class="ng-binding">cost+4000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">4000</td>
+                                <td class="ng-binding">31/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">23</td>							
+                                <td class="ng-binding">Vochoure</td>
+                                <td class="ng-binding">career studio</td>
+                                <td class="ng-binding">11000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">31/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">24</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">career studio</td>
+                                <td class="ng-binding">cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">31/07/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">25</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">ITCS</td>
+                                <td class="ng-binding">cost+3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">01/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">26</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">devendra</td>
+                                <td class="ng-binding">13000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">01/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">27</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">devendra</td>
+                                <td class="ng-binding">20000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">01/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">28</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">abhitabh</td>
+                                <td class="ng-binding">cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">01/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">29</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">abhitabh</td>
+                                <td class="ng-binding">cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">01/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">30</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">technohard</td>
+                                <td class="ng-binding">Cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">10/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">31</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">vishnu</td>
+                                <td class="ng-binding">Cost+5000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">5000</td>
+                                <td class="ng-binding">10/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">32</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">technohard</td>
+                                <td class="ng-binding">cost+3000</td>
+                                <td class="ng-binding">cost+</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">11/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">33</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">abhitabh</td>
+                                <td class="ng-binding">10000</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">0</td>
+                                <td class="ng-binding">12/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr --><tr ng-repeat="list in sentarr" class="ng-scope">
+                                <td class="ng-binding">34</td>							
+                                <td class="ng-binding">Exam</td>
+                                <td class="ng-binding">bala murugan</td>
+                                <td class="ng-binding">14000</td>
+                                <td class="ng-binding">11000</td>
+                                <td class="ng-binding">3000</td>
+                                <td class="ng-binding">13/08/2020</td>
+                            </tr><!-- end ngRepeat: list in sentarr -->
+                            <tr ng-show="newsentarr" style="background-color:#f5ededb5" class="ng-hide"><td colspan="7"><center><b class="ng-binding"></b></center></td></tr>
+                        </tbody>
+					</table></body></html>

@@ -1,0 +1,257 @@
+<?php include_once( APPPATH . 'views/inc/ciuis_data_table_header.php' ); ?>
+<?php $appconfig = get_appconfig(); ?>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<md-content class=" ciuis-body-fixed-sidebar _md" ciuis-ready="" style="background:white;">
+<md-content class="ciuis-body-content ng-scope _md" >
+<md-toolbar class="toolbar-white _md _md-toolbar-transitions">
+				<div class="md-toolbar-tools">
+					<h2 flex="" md-truncate="" class="text-bold md-truncate flex">Create Attendance <br><small flex="" md-truncate="" class="md-truncate flex">Organize your Attendance</small></h2>
+				
+				
+											
+									</div>
+			</md-toolbar>
+<div class="main-content container-fluid col-xs-12 col-md-12 col-lg-12" style="background:white;min-height: 500px;">
+
+        
+              <div class="col-md-12">
+			  <div class="col-md-8 col-md-offset-2">
+              <form class="form-horizontal" action="<?php echo base_url('attendance/create');?>" method="post">
+                  	
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="email"> Select Date</label>
+
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control newdatepicker" name="attendance_date" id="attendance_date" placeholder="date" autocomplete="off" value="<?php if(isset($attendance_date)){echo $attendance_date; } ?>" >
+                  </div>
+                </div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="email">Departments</label>
+                  <div class="col-sm-5">
+                    <select class="form-control selectpicker" name="department[]" id="department" multiple title="Select Department"  >
+                      <option value=""></option>
+					  <?php if($departments) {
+						  foreach($departments as $dept) { ?>
+					  
+                      <option value="<?php echo $dept['id'];?>" <?php if(in_array($dept['id'],$depid)) {
+						  echo "selected='selected'";
+						  
+					  } ?>><?php echo $dept['name'];?></option>
+                     
+					  <?php }  } ?>
+                    </select>
+                  </div>
+				</div>
+			<div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-primary" onclick="select_department();">Search</button>
+                  </div>
+                </div>
+				</form>
+				</div>
+				<hr/>
+				 
+				
+				<?php if($employees) {  
+				?>
+				<form class="form-horizontal" action="<?php echo base_url('attendance/create');?>" method="post">
+				  <input type="hidden" class="form-control newdatepicker" name="attendance_date" id="attendance_date" value="<?php print $attendance_date;?>">
+				   <input type="hidden" class="form-control newdatepicker" name="department" id="department" value="<?php print $_GET['id'];?>">
+				<input type="hidden" name="employees" value="<?php print_r($employees);?>" />
+				<table class="table table-stripped table-bordered"> 
+				<thead>
+				<tr>
+				
+				<th scope="col" style="color:#000"><b>Staff Number</b></th>
+				<th scope="col" style="color:#000">Staff Name</th>
+				<th scope="col" style="color:#000">Present</th>
+				<th scope="col" style="color:#000">Absent</th>
+				<th scope="col" style="color:#000">Week Off</th>
+				<th scope="col" style="color:#000">Sick Leave</th>
+				<th scope="col" style="color:#000">Public Holiday</th>
+				<th scope="col" style="color:#000">In Time</th>
+				<th scope="col" style="color:#000">Out Time</th>
+				<th scope="col" style="color:#000">OT Hours</th>
+				</tr>
+				</thead>
+				<tbody>
+				<?php 
+				foreach($employees as $emp) {
+				$day=date('l',strtotime($attendance_date));	
+						$gettime=$this->Attendance_Model->get_attendance_time($emp['id']);
+						$workplan=json_decode($gettime['work_plan'],TRUE);
+						$starttime='';
+						$endtime='';
+						if($workplan!=''){
+							foreach($workplan as $eachwork){
+								if($eachwork['status']==1){
+									if(trim($eachwork['day'])==$day){
+										$starttime= $eachwork['start'];
+										$endtime= $eachwork['end'];
+									}
+								}
+							}
+						}
+						
+						?>
+				<tr>
+				
+				<td><?php echo $emp['staff_number']; ?></td>
+				<td><?php echo $emp['staffname']; ?></td>
+		
+	<?php		if(array_key_exists($emp['id'], $attendance)  && $attendance[$emp['id']] == "P") { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="P" checked onclick="makedefault_value1('<?php echo $emp['id'];?>','P')" /> </td>
+			<?php } else { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="P" checked onclick="makedefault_value('<?php echo $emp['id'];?>','P')" /> </td>
+			<?php } ?>
+					<?php if(array_key_exists($emp['id'], $attendance)  && $attendance[$emp['id']] == "A") { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="A" checked onclick="makedefault_value1('<?php echo $emp['id'];?>','A')" /> </td>
+				<?php } else { ?>
+					<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="A" 
+					onclick="makedefault_value('<?php echo $emp['id'];?>','A')" /> </td>
+					<?php } ?>
+						<?php if(array_key_exists($emp['id'], $attendance)  && $attendance[$emp['id']] == "WO") { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="WO" checked onclick="makedefault_value1('<?php echo $emp['id'];?>','WO')"  /> </td>
+				<?php } else { ?>
+					<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="WO" onclick="makedefault_value('<?php echo $emp['id'];?>','WO')" /> </td>
+					<?php } ?>
+						<?php if(array_key_exists($emp['id'], $attendance)  && $attendance[$emp['id']] == "SL") { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="SL" checked onclick="makedefault_value1('<?php echo $emp['id'];?>','SL')"/> </td>
+					<?php } else { ?>
+						<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="SL" onclick="makedefault_value('<?php echo $emp['id'];?>','SL')"/> </td>
+							<?php } ?>
+								<?php if(array_key_exists($emp['id'], $attendance)  && $attendance[$emp['id']] == "PH") { ?>
+				<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="PH" checked  onclick="makedefault_value1('<?php echo $emp['id'];?>','PH')"/> </td>
+					<?php } else { ?>
+					<td><input type="radio" name="staff_<?php echo $emp['id'];?>" id="staff_id" value="PH" onclick="makedefault_value('<?php echo $emp['id'];?>','PH')"/> </td>
+						<?php } ?>
+						
+						<?php if(array_key_exists($emp['id'], $attendance_timings)  && $attendance_timings[$emp['id']] != "") {
+						$timings = explode(',',$attendance_timings[$emp['id']]);
+						  
+						echo $time2=$timings['1'];
+							$ottime= $this->Attendance_Model->get_time_difference($endtime, $time2);
+							if($time2<$endtime){
+								$ottime='-'.$ottime;
+							}else{
+								$ottime=$ottime;
+							}
+						  
+						?>
+				 <td><input type="time" class="form-control clockin<?php echo $emp['id'];?>"" name="staff[<?php echo $emp['id'];?>][clock_in]" id="clock_in" placeholder="Select time" value="<?php echo $timings['0'];?>"><input type="hidden" value="<?php echo $timings['0'];?>" id="insertcheckinval<?php echo $emp['id'];?>"></td>
+				    <td><input type="time" class="form-control clockout<?php echo $emp['id'];?>"" name="staff[<?php echo $emp['id'];?>][clock_out]" id="clock_out" placeholder="Select time" value="<?php echo $timings['1'];?>"  onclick="calculate_difference('<?php echo $emp['id'];?>');">
+					<input type="hidden" value="<?php echo $timings['1'];?>" id="insertcheckoutval<?php echo $emp['id'];?>" ><input type="hidden" value="<?php echo $endtime;?>" id="exacttime<?php echo $emp['id'];?>" ></td>
+				    <?php } else { $ottime=''; ?>
+				    
+				    	 <td><input type="time" class="form-control clockin<?php echo $emp['id'];?>" name="staff[<?php echo $emp['id'];?>][clock_in]" id="clock_in" placeholder="Select time" value="<?php echo $starttime;?>" ></td>
+				    <td><input type="time" class="form-control clockout<?php echo $emp['id'];?>" name="staff[<?php echo $emp['id'];?>][clock_out]" id="clock_out" placeholder="Select time" value="<?php echo $endtime;?>" onclick="calculate_difference('<?php echo $emp['id'];?>');"><input type="hidden" value="<?php echo $endtime;?>" id="exacttime<?php echo $emp['id'];?>" ></td>
+	
+				    <?php } ?>
+						<?php if(array_key_exists($emp['id'], $employee_ot_hours)  && $employee_ot_hours[$emp['id']] != "") { ?>
+					<td><input type="text" class="form-control ot_hrs_<?php echo $emp['id'];?>" name="ot_<?php echo $emp['id'];?>" id="ot_hrs" value="<?php if($ottime!=''){print $ottime; }else{echo $employee_ot_hours[$emp['id']];}?>"><input type="hidden" class="form-control ot_hrs_exist<?php echo $emp['id'];?>" name="ot_<?php echo $emp['id'];?>" id="ot_hrs" value="<?php if($ottime!=''){print $ottime; }else{echo $employee_ot_hours[$emp['id']];}?>"></td>
+						<?php } else { ?>
+						<td><input type="text" class="form-control ot_hrs_<?php echo $emp['id'];?>" name="ot_<?php echo $emp['id'];?>" id="ot_hrs"></td>
+						<?php } ?>
+				</tr>
+				<?php }  ?>
+				</tbody>
+				</table>
+                
+                      <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </form>
+				<?php }?>
+            </div>
+			</div>
+			 </md-content>
+			  </md-content>
+
+<?php include_once( APPPATH . 'views/inc/other_footer.php' ); ?>
+<script src="<?php echo base_url('assets/js/ciuis_data_table.js'); ?>"></script>
+<script src="<?php echo base_url('assets/lib/chartjs/dist/Chart.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/js/CiuisAngular.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/staffs.js'); ?>"></script>
+<?php include_once( APPPATH . 'views/inc/validate_footer.php' ); ?>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>   
+  <script>
+    $(document).ready(function(){
+      var date_input=$('.newdatepicker'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+   
+      date_input.datepicker({dateFormat:'yy-mm-dd',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,changeYear: true,changeMonth: true});
+    })
+	
+	function select_department(){
+		
+		var attendance_date = $('#attendance_date').val();
+		var department = $('#department').val();
+		if(department == ''){
+			alert("Please select department");
+			$('#department').focus()
+			return false;
+		}else{
+		 url = "<?php echo base_url(); ?>attendance/create?id="+department+"&date="+attendance_date;
+		
+	
+		window.location.href =  url
+		}
+		
+	}
+	function calculate_difference(id)
+	{
+		
+		var changetime=$('.clockout'+id+'').val();
+		var exacttime=$('#exacttime'+id+'').val();
+		 var values = {changetime:changetime,exacttime:exacttime};
+		$.ajax({
+        url: "<?php echo base_url(); ?>attendance/change_time",
+        type: "post",
+        data: values ,
+        success: function (response) {
+		$('.ot_hrs_'+id+'').val(response);
+           // You will get response from your PHP page (what you echo or print)
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+    });
+	}
+	
+	function makedefault_value(id,type)
+	{
+		if(type=='A'){
+		$('.clockin'+id+'').val('00:00');
+		$('.clockout'+id+'').val('00:00');
+		$('.ot_hrs_'+id+'').val('00:00');
+		}else{
+			$('.clockin'+id+'').val('08:00');
+			$('.clockout'+id+'').val('18:30');
+		}
+	}
+	
+	function makedefault_value1(id,type){
+		if(type=='A'){
+		$('.clockin'+id+'').val('00:00');
+		$('.clockout'+id+'').val('00:00');
+		$('.ot_hrs_'+id+'').val('00:00');
+		}else{
+			$('.clockin'+id+'').val($('#insertcheckinval'+id+'').val());
+			$('.clockout'+id+'').val($('#insertcheckoutval'+id+'').val());
+			$('.ot_hrs_'+id+'').val($('.ot_hrs_exist'+id+'').val());
+			
+		}
+		
+	}
+	
+</script>
+
+

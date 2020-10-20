@@ -1,0 +1,786 @@
+<?php include_once( APPPATH . 'views/inc/ciuis_data_table_header.php' ); ?>
+<?php $appconfig = get_appconfig(); ?>
+<!--box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;-->
+<style>
+
+ 
+.centered-form .panel{
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+</style>
+<div class="ciuis-body-content" >
+  <div  class="main-content container-fluid col-xs-12 col-md-12 col-lg-12"> 
+    <md-toolbar class="toolbar-white">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Proposal" ng-disabled="true">
+          <md-icon><i class="ico-ciuis-proposals text-muted"></i></md-icon>
+        </md-button>
+        <h2 flex md-truncate><?php // echo lang('createnotebook') ?></h2>
+        <md-switch ng-model="proposal_type" aria-label="Type" ng-cloak><strong class="text-muted"><?php echo lang('for_lead')?></strong></md-switch>
+        <md-button ng-href="<?php echo base_url('notebooks')?>" class="md-icon-button" aria-label="Save" ng-cloak>
+          <md-tooltip md-direction="bottom"><?php echo lang('cancel') ?></md-tooltip>
+          <md-icon><i class="ion-close-circled text-danger"></i></md-icon>
+        </md-button>
+        <md-button type="button" ng-href="<?php echo base_url('notebooks/create')?>"  class="md-icon-button" aria-label="Save" ng-cloak>
+          <md-progress-circular ng-show="savingProposal == true" md-mode="indeterminate" md-diameter="20"></md-progress-circular>
+          <md-tooltip ng-hide="savingProposal == true" md-direction="bottom"><?php echo lang('create') ?></md-tooltip>
+          <md-icon ng-hide="savingProposal == true"><i class="ion-checkmark-circled text-success"></i></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+   
+	 <form  action="<?php echo base_url('notebooks/create') ?>" method="post" enctype="multipart/form-data">
+    <md-content class="bg-white layout-padding _md" >
+	
+	  <md-toolbar class="toolbar-white _md _md-toolbar-transitions">
+      <div class="md-toolbar-tools">
+               <md-button class="md-icon-button" aria-label="Proposal" ng-disabled="true">
+          <md-icon><i class="ico-ciuis-proposals text-muted"></i></md-icon>
+        </md-button>
+        <h2 flex="" md-truncate="" class="md-truncate flex">COMPLETE NOTE BOOK</h2>
+       
+      </div>
+    </md-toolbar>
+	   	 <div class="box-body">
+					 
+				
+
+						<div id="notebook_list_id0" class="row centered-form" style="background:#fff;">
+						<div class="col-xs-12 col-sm-8 col-md-12 ">
+						 <div class="panel panel-info">
+ 
+ 
+                    <div class="panel-body">
+						<div class="row" id="example2" style="padding: 10px;" >
+							<div class="col-sm-1">#</div>
+							<div class="col-sm-2">Notebook List</div>
+							<div class="col-sm-2">Created Date</div>
+							<div class="col-sm-2">Remarks</div>
+							<div class="col-sm-2">Descriptions</div>
+							<div class="col-sm-1">Action</div>
+							   
+						</div>	
+						
+						<div class="row cloned-row" style="padding: 10px;">
+						<div class="col-sm-1">
+						<span><b>1</b></span>
+						</div>
+						<div class="col-sm-2">
+							
+								<input type="text" name="items[notebook_list][]"  id="notebook_list0" required="required" class="form-control"  onchange="select_notebook_list(0);" />
+						</div>
+						<div class="col-sm-2"><input type="date" name="items[created_date][]" id="created_date0" class="form-control" value="" ></div>
+							<div class="col-sm-2"><input type="text" name="items[remarks][]" id="remarks_0" class="form-control" ></div>
+							<div class="col-sm-2"><input type="text" name="items[description][]" id="tax_0" class="form-control" value=""></div>
+						<div class="col-sm-1">
+							<button class="btn btn-success removeclass " type="button" onclick="select_activity(0,0);"><i class="glyphicon glyphicon-circle-arrow-down"></i></button>
+							
+							</div>                          
+						</div>
+						<div style="border:1px solid #ddd;padding-bottom:10px;display:none" class="row " id="border_id_0_0">
+						
+						<div class=" well clearfix sub-wrapper" >
+						<div id="ac_id_0_0" style="display:none; margin-top:10px;" class="col-md-11 col-md-offset-1">
+						
+							<div class="col-sm-1"><label class="control-label">Pages</label><br><span><b>1</b></span></div>
+							<div class="col-sm-1"><label class="control-label">Page No.</label><input type="text" name="subitems[0][page_no][]" id="page_no_0_0"  class="form-control"/></div>
+							<div class="col-sm-1"><label class="control-label">Created Date</label><input type="date" name="subitems[0][c_date][]" id="c_date_0_0" class="form-control" /></div>
+							<div class="col-sm-1"><label class="control-label">Description</label><input type="text" name="subitems[0][desc][]" id="desc_0_0" class="form-control"/></div>
+							<div class="col-sm-1"><label class="control-label">Attachments</label><input type="file" id="input-file-now" class="file-upload" /></div>
+							<div class="col-sm-1"><label class="control-label">Action</label>
+							<a href="javascript:void(0);" class="list_remove_button1 btn btn-danger">-</a></div>
+							
+						</div>                          
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div> 
+						
+						</div>
+<div class="col-md-12">
+<input type="submit" name="submit" id="submit" value="Create" class="btn btn-primary col-md-6" style="float:right;">  
+</div>
+ </form>
+      
+    </md-content>
+        <custom-fields-vertical ng-show="!proposalsLoader && custom_fields.length > 0"></custom-fields-vertical> 
+	</div>
+
+</div>
+
+
+</div>
+
+<?php include_once( APPPATH . 'views/inc/other_footer.php' ); ?>
+<script src="<?php echo base_url('assets/js/ciuis_data_table.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/estimations.js'); ?>"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+
+<?php include_once( APPPATH . 'views/inc/validate_footer.php' ); ?>
+<script>
+    ClassicEditor
+            .create( document.querySelector( '#special_notes' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+		$('.file-upload').file_upload();
+
+
+ $(".client").select2({
+			//placeholder: "Select .."
+	});
+	$(".contact").select2({
+			//placeholder: "Select .."
+	});
+	$(".sub").select2({
+	
+	});
+	
+});
+		
+			
+function select_notebook_list(num){
+	var val = num+1;
+	var k = val+1;
+	$("#getMessage"+num+"").hide();
+	//document.getElementById("getMessage"+num+"").style.visibility="hidden";
+	$('div#notebook_list_id'+num+'').after("<div id='notebook_list_id"+val+"' class='row centered-form' style='background:#fff;'><div class='col-xs-12 col-sm-8 col-md-12 '><div class='panel panel-info'><div class='panel-body'><div class='row cloned-row' style='padding: 10px;'><div class='col-sm-1'><b>"+k+"</b></div><div class='col-sm-2'><input type='text' name='items[notebook_list][]' id='notebook_list"+val+"' class='form-control' onchange='select_notebook_list("+val+");'/></div><div class='col-sm-2'><input type='date' name='items[created_date][]' id='created_date"+val+"' class='form-control' value=''></div><div class='col-sm-2'><input type='text' name='items[remarks][]' id='remarks_"+val+"' class='form-control'></div><div class='col-sm-2'><input type='text' name='items[description][]' id='description_"+val+"' class='form-control' value=''></div><div class='col-sm-1'> <button class='btn btn-success removeclass' type='button' onclick='select_activity("+val+",0);'><i class='glyphicon glyphicon-circle-arrow-down'></i></button> </div><div style='border: 1px solid rgb(221, 221, 221); padding-bottom: 10px;display:none;' class='row ' id='border_id_"+val+"_0'><div class=' well clearfix sub-wrapper'><div id='ac_id_"+val+"_0' style='display:none;' class='d col-md-11 col-md-offset-1' style='margin-top: 10px;'><div class='' ><div class='col-sm-1'><b>Pages</b></div><div class='col-sm-1'><label class='control-label'>Page No.</label><input type='text' name='subitems["+val+"][page_no][]' id='page_no_"+val+"_0'  class='form-control'/></div><div class='col-sm-1'><label class='control-label'>Created Date</label><input type='date' name='subitems["+val+"][c_date][]' id='c_date_"+val+"_0' class='form-control'/></div><div class='col-sm-1'><label class='control-label'>Description</label><input type='text' name='subitems["+val+"][desc][]' id='desc_"+val+"_0' class='form-control' value=''/></div><div class='col-sm-1'><label class='control-label'>Attachments </label><input type='file' name='subitems["+val+"][file][]' id='file_"+val+"_0' class='form-control/></div><div class='col-sm-1'><a href='javascript:void(0);' class='list_remove_button1 btn btn-danger'>-</a></div></div></div></div></div></div></div></div></div></div>");
+	
+	$(".sub").select2({
+	
+	});
+}
+
+function select_activity(workcount,activitycount){
+	//alert(workcount);
+	//alert(activitycount);
+	
+	$('#border_id_'+workcount+'_'+activitycount+'').toggle();
+	$('#ac_id_'+workcount+'_'+activitycount+'').toggle();
+	$('#totals'+workcount).toggle();
+	
+	
+	$(".sub").select2({
+	
+	});
+}
+function add_activity(value,workgroup_count,activity_count){
+	
+	var material_id = value;
+	
+	$.ajax({
+              url : "<?php echo base_url(); ?>estimations/get_material_data",
+              data:{material_id : material_id},
+              method:'POST',
+              dataType:'json',
+              success:function(response) {
+				 
+				 $('#sku_'+workgroup_count+'_'+activity_count).val(response.item_code);
+				$('#unit_cost_'+workgroup_count+'_'+activity_count).val(response.cost);
+			$('#margin_'+workgroup_count+'_'+activity_count).val(response.margin_value);
+			var quantity = $('#quantity_'+workgroup_count+'_'+activity_count).val();
+		$('#total_cost_'+workgroup_count+'_'+activity_count).val(quantity*response.cost);
+			var margin_value = $('#margin_'+workgroup_count+'_'+activity_count).val();
+		var sp =  parseFloat((1+(margin_value/100))*$('#total_cost_'+workgroup_count+'_'+activity_count).val());
+			$('#sp_'+workgroup_count+'_'+activity_count).html(sp);
+			
+			$('#selling_price_'+workgroup_count+'_'+activity_count).val(sp);
+			
+			 tot_sal = 0;
+    
+$('input.sps_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_sal += value;
+						
+					}				
+});
+
+$('#sub_total_sp'+workgroup_count).html(tot_sal);
+$('#unit_price_'+workgroup_count).val(tot_sal);
+$('#sub_tot_sp'+workgroup_count).val(tot_sal);
+
+total_ucost = 0;
+$('input.tc_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_ucost += value;
+						
+					}		
+});
+$('#sub_total_cost'+workgroup_count).html(total_ucost);
+$('#sub_tot_cost'+workgroup_count).val(total_ucost);
+		var mainqty = parseFloat($('#qty'+workgroup_count).val());	
+		var round_value = parseFloat($('#round_helper'+workgroup_count).val());
+			
+		if (!isNaN(round_value)){ 
+			round = round_value;
+		}else{
+			
+			round = 0;
+		}
+			
+	$('#unit_price_'+workgroup_count).val(tot_sal+parseFloat(round)/mainqty);
+	$('#tot'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+	$('#amount_'+workgroup_count).val(parseFloat(tot_sal)+parseFloat(round));
+	
+	$('#ototal'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+			
+			total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+			$('#estimation_total_cost').html(total_eucost);
+			$('#estimation_total_cost_amt').val(total_eucost);
+			
+			
+			total_profit = 0;
+$('input.sub_sp').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_profit += value;
+						
+					}		
+});
+			$('#estimation_profit').html(total_profit-total_eucost);
+			$('#estimation_profit_amt').val(total_profit-total_eucost);
+                tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}		
+});
+
+$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+
+var tax_amt = (tot_amt)*(5/100);
+$('#estimation_tax').html(tax_amt);
+$('#estimation_tax_amount').val(tax_amt);
+
+$('#estimation_total_amount').html(parseFloat(tax_amt)+parseFloat(tot_amt));
+$('#estimation_total_amt').val(parseFloat(tax_amt)+parseFloat(tot_amt));
+				
+            }
+          });
+		  
+	var act_count = activity_count+1;
+	var j = act_count+1;
+	//$("#getActivity_"+workgroup_count+"_"+activity_count+"").hide();
+	$('div#ac_id_'+workgroup_count+'_'+activity_count+'').after("<div id='ac_id_"+workgroup_count+"_"+act_count+"' class='d col-md-11 col-md-offset-1' style='margin-top: 10px;' ><div class='' ><div class='col-sm-1'>"+j+"</div><div class='col-sm-1'><input type='text' name='subitems["+workgroup_count+"][sku][]' id='sku_"+workgroup_count+"_"+act_count+"'  class='form-control  '/></div><div class='col-sm-2'><select  name='subitems["+workgroup_count+"][name][]' id='name_"+workgroup_count+"_"+act_count+"' class='form-control ' onchange='add_activity(this.value,"+workgroup_count+","+act_count+")'>"+$('.copy_append').html()+"</select></div><div class='col-sm-1'><input type='text' name='subitems["+workgroup_count+"][unit_cost][]' id='unit_cost_"+workgroup_count+"_"+act_count+"' class='form-control' onchange='select_subcost(this.value,"+workgroup_count+","+act_count+")'/></div><div class='col-sm-1'><input type='text' name='subitems["+workgroup_count+"][qty][]' id='quantity_"+workgroup_count+"_"+act_count+"' onchange='select_activityquantity(this.value,"+workgroup_count+","+act_count+")' class='form-control' value='1'/></div><div class='col-sm-1'><input type='text' name='subitems["+workgroup_count+"][margin][]' id='margin_"+workgroup_count+"_"+act_count+"' class='form-control selling_price_"+workgroup_count+"_"+act_count+"'/></div><div class='col-sm-2'><input type='text' name='subitems["+workgroup_count+"][total_cost][]' id='total_cost_"+workgroup_count+"_"+act_count+"' class='form-control tc_"+workgroup_count+"' readonly /></div><div class='col-sm-2'><span id='sp_"+workgroup_count+"_"+act_count+"'>0</span><input type='hidden' name='subitems["+workgroup_count+"][selling_price][]' id='selling_price_"+workgroup_count+"_"+act_count+"' class='sps_"+workgroup_count+"' /></div><div class='col-sm-1'><a href='javascript:void(0);' class='list_remove_button1 btn btn-danger'>-</a> </div></div>");
+	
+	$(".sub").select2({
+	
+	});
+	
+	
+}
+$('body').on('change','#client_id',function() { 
+
+var client_id = $('#client_id').val();
+
+ $.ajax({
+              url : "<?php echo base_url(); ?>estimations/get_client_contacts",
+              data:{ client_id : client_id},
+              method:'POST',
+             // dataType:'json',
+              success:function(data) {
+				 
+                $('#client_contact_id').html(data);
+            }
+          });
+
+});
+
+function select_subcost(val,workgroup_count,activity_count){
+	var unit_cost = val;
+	var quantity = parseFloat($('#quantity_'+workgroup_count+'_'+activity_count).val());
+	var margin_value = parseFloat($('#margin_'+workgroup_count+'_'+activity_count).val());
+	$('#total_cost_'+workgroup_count+'_'+activity_count).val(quantity*unit_cost);
+	var sp =  parseFloat((1+(margin_value/100))*parseFloat($('#total_cost_'+workgroup_count+'_'+activity_count).val()));
+	$('#sp_'+workgroup_count+'_'+activity_count).html(sp);
+	$('#selling_price_'+workgroup_count+'_'+activity_count).val(sp);
+	
+	 tot_sal = 0;
+    
+$('input.sps_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					if (!isNaN(value)){ 			
+						tot_sal += value;
+						
+					}			
+});
+
+$('#sub_total_sp'+workgroup_count).html(tot_sal);
+$('#sub_tot_sp'+workgroup_count).val(tot_sal);
+total_ucost = 0;
+$('input.tc_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_ucost += value;
+						
+					}		
+});
+$('#sub_total_cost'+workgroup_count).html(total_ucost);
+$('#sub_tot_cost'+workgroup_count).val(total_ucost);
+		var mainqty = parseFloat($('#qty'+workgroup_count).val());
+		var round_value = parseFloat($('#round_helper'+workgroup_count).val());		
+		
+		if (!isNaN(round_value)){ 
+		round = round_value;
+		}else{
+			round = 0;
+		}
+	$('#unit_price_'+workgroup_count).val(parseFloat(tot_sal)+parseFloat(round)/mainqty);
+	$('#tot'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+	$('#amount_'+workgroup_count).val(parseFloat(tot_sal)+parseFloat(round));
+	$('#ototal'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+	
+	total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+			$('#estimation_total_cost').html(total_eucost);
+			$('#estimation_total_cost_amt').val(total_eucost);
+			
+			
+			total_profit = 0;
+$('input.sub_sp').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_profit += value;
+						
+					}		
+});
+			$('#estimation_profit').html(total_profit-total_eucost);
+			$('#estimation_profit_amt').val(total_profit-total_eucost);
+                tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}		
+});
+
+$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+
+var tax_amt = (tot_amt)*(5/100);
+$('#estimation_tax').html(tax_amt);
+$('#estimation_tax_amount').val(tax_amt);
+
+$('#estimation_total_amount').html(parseFloat(tax_amt)+parseFloat(tot_amt));
+$('#estimation_total_amt').val(parseFloat(tax_amt)+parseFloat(tot_amt));
+			
+	
+		
+}
+function select_activityquantity(val,workgroup_count,activity_count){
+	var quantity = val;
+	var unit_cost = $('#unit_cost_'+workgroup_count+'_'+activity_count).val();
+	var margin_value = $('#margin_'+workgroup_count+'_'+activity_count).val();
+	$('#total_cost_'+workgroup_count+'_'+activity_count).val(quantity*unit_cost);
+	var sp =  parseFloat((1+(margin_value/100))*$('#total_cost_'+workgroup_count+'_'+activity_count).val());
+	$('#sp_'+workgroup_count+'_'+activity_count).html(sp);
+	$('#selling_price_'+workgroup_count+'_'+activity_count).val(sp);
+	
+	 tot_sal = 0;
+  
+$('input.sps_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					if (!isNaN(value)){ 			
+						tot_sal += value;
+						
+						
+					}			
+});
+$('#sub_total_sp'+workgroup_count).html(tot_sal);
+$('#sub_tot_sp'+workgroup_count).val(tot_sal);
+total_ucost = 0;
+$('input.tc_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_ucost += value;
+						
+					}		
+});
+				$('#sub_total_cost'+workgroup_count).html(total_ucost);
+				$('#sub_tot_cost'+workgroup_count).val(total_ucost);
+				var mainqty = parseFloat($('#qty'+workgroup_count).val());
+				var round_value = parseFloat($('#round_helper'+workgroup_count).val());
+				
+										if (!isNaN(round_value)){ 
+										round = round_value;
+										
+										}else{
+											round = 0;
+										}
+				
+	$('#unit_price_'+workgroup_count).val(parseFloat(tot_sal)+parseFloat(round)/mainqty);
+	$('#tot'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+	$('#amount_'+workgroup_count).val(parseFloat(tot_sal)+parseFloat(round));
+	$('#ototal'+workgroup_count).html(parseFloat(tot_sal)+parseFloat(round));
+	
+	total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+			$('#estimation_total_cost').html(total_eucost);
+			$('#estimation_total_cost_amt').val(total_eucost);
+			
+			
+			total_profit = 0;
+$('input.sub_sp').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_profit += value;
+						
+					}		
+});
+			$('#estimation_profit').html(total_profit-total_eucost);
+			$('#estimation_profit_amt').val(total_profit-total_eucost);
+                tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}		
+});
+
+$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+
+var tax_amt = (tot_amt)*(5/100);
+$('#estimation_tax').html(tax_amt);
+$('#estimation_tax_amount').val(tax_amt);
+
+$('#estimation_total_amount').html(parseFloat(tax_amt)+parseFloat(tot_amt));
+$('#estimation_total_amt').val(parseFloat(tax_amt)+parseFloat(tot_amt));
+			
+	
+	
+}
+
+
+
+function main_item(val,workgroup_count){
+	
+	//alert(default_val);
+	var qty = val;
+var k = 0;
+tot_sal = 0;
+$('input.sps_'+workgroup_count).each(function() { 
+	
+	var unit_cost = $('#unit_cost_'+workgroup_count+'_'+k).val();
+	var margin_value = $('#margin_'+workgroup_count+'_'+k).val();
+	var quantity = $('#quantity_'+workgroup_count+'_'+k).val();
+	$('#total_cost_'+workgroup_count+'_'+k).val(qty*unit_cost);
+	$('#quantity_'+workgroup_count+'_'+k).val(qty*quantity);
+	var sp =  parseFloat((1+(margin_value/100))*$('#total_cost_'+workgroup_count+'_'+k).val());
+	$('#sp_'+workgroup_count+'_'+k).html(sp);
+	$('#selling_price_'+workgroup_count+'_'+k).val(sp);
+	
+	var value = parseFloat($(this).val());
+					if (!isNaN(value)){ 			
+						tot_sal += value;
+						
+						
+					}	
+k++;	
+});
+
+$('#sub_total_sp'+workgroup_count).html(tot_sal);
+$('#sub_tot_sp'+workgroup_count).val(tot_sal);
+total_ucost = 0;
+$('input.tc_'+workgroup_count).each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_ucost += value;
+						
+					}		
+});
+$('#sub_total_cost'+workgroup_count).html(total_ucost);
+$('#sub_tot_cost'+workgroup_count).val(total_ucost);
+
+	$('#unit_price_'+workgroup_count).val(tot_sal/qty);
+	$('#tot'+workgroup_count).html(tot_sal);
+	$('#samount_'+workgroup_count).val(tot_sal);
+	$('#ototal'+workgroup_count).html(tot_sal);
+	
+	total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+			$('#estimation_total_cost').html(total_eucost);
+			$('#estimation_total_cost_amt').val(total_eucost);
+			
+			
+			total_profit = 0;
+$('input.sub_sp').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_profit += value;
+						
+					}		
+});
+			$('#estimation_profit').html(total_profit-total_eucost);
+			$('#estimation_profit_amt').val(total_profit-total_eucost);
+                tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}		
+});
+
+$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+
+var tax_amt = (tot_amt)*(5/100);
+$('#estimation_tax').html(tax_amt);
+$('#estimation_tax_amount').val(tax_amt);
+
+$('#estimation_total_amount').html(parseFloat(tax_amt)+parseFloat(tot_amt));
+$('#estimation_total_amt').val(parseFloat(tax_amt)+parseFloat(tot_amt));
+			
+	
+}
+function select_round(val,workgroup_count){
+	var round_value = parseFloat(val);
+	
+	var line_tot = parseFloat($('#unit_price_'+workgroup_count).val());
+	var quantity = parseFloat($('#qty'+workgroup_count).val());
+	
+	if (!isNaN(line_tot)){ 	
+					var ln_tot = line_tot;				
+					}
+		else{
+		var ln_tot = 0;
+		}
+    if (!isNaN(round_value)){ 
+	var round = round_value;
+	}else{
+		var round = 0;
+	}
+					
+	$('#unit_price_'+workgroup_count).val(parseFloat(ln_tot)+parseFloat(round)/quantity);
+	$('#tot'+workgroup_count).html(parseFloat(ln_tot)+parseFloat(round));
+	$('#amount_'+workgroup_count).val(parseFloat(ln_tot)+parseFloat(round));
+	$('#ototal'+workgroup_count).html(parseFloat(ln_tot)+parseFloat(round));
+	
+	total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+			$('#estimation_total_cost').html(total_eucost);
+			$('#estimation_total_cost_amt').val(total_eucost);
+			
+			
+			total_profit = 0;
+$('input.sub_sp').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_profit += value;
+						
+					}		
+});
+			$('#estimation_profit').html(total_profit-total_eucost);
+			$('#estimation_profit_amt').val(total_profit-total_eucost);
+                tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}		
+});
+
+$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+
+var tax_amt = (tot_amt)*(5/100);
+$('#estimation_tax').html(tax_amt);
+$('#estimation_tax_amount').val(tax_amt);
+
+$('#estimation_total_amount').html(parseFloat(tax_amt)+parseFloat(tot_amt));
+$('#estimation_total_amt').val(parseFloat(tax_amt)+parseFloat(tot_amt));
+			
+	
+}
+
+function select_discount(val){
+	var discount = val;
+	var estimated_profit = $('#estimation_profit_amt').val();
+	var tot = $('#estimation_total_amt').val();
+	
+	$('#estimation_profit_amt').val(estimated_profit-discount);
+	$('#estimation_profit').html(estimated_profit-discount);
+	
+	$('#estimation_total_amount').html(tot-discount);
+$('#estimation_total_amt').val(tot-discount);
+	
+}
+function add_estimation(){
+	
+	 url = "<?php echo base_url(); ?>estimations/create";
+	 window.location.reload(url);
+	
+	alert('sds');
+}
+	</script>
+	<script>
+	$(document).ready(function()
+
+    {
+	var x = 0; //Initial field counter
+	var y = 0; 
+	var list_maxField = 10; //Input fields increment limitation
+	
+        //Once add button is clicked
+	$('.list_add_button').click(function()
+	    {
+	    //Check maximum number of input fields
+	    if(x < list_maxField){ 
+	        x++; //Increment field counter
+	        var list_fieldHTML = '<div class="row"><div class="col-xs-4 col-sm-4 col-md-3"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Name" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-1 col-sm-7 col-md-1"><a href="javascript:void(0);" class="list_remove_button btn btn-danger">-</a></div></div>'; //New input field html 
+	        $('.list_wrapper').append(list_fieldHTML); //Add field html
+	    }
+        });
+    
+        //Once remove button is clicked
+        $('.list_wrapper').on('click', '.list_remove_button', function()
+        {
+           $(this).closest('div.row').remove(); //Remove field html
+           x--; //Decrement field counter
+        });
+		
+		//sub div
+		
+		     //Once add button is clicked
+	$('.list_add_button1').click(function()
+	    {
+	    //Check maximum number of input fields
+	    if(y < list_maxField){ 
+	        y++; //Increment field counter
+	        var list_fieldHTML1 = '<div class="row"><div class="col-xs-4 col-sm-4 col-md-1"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="SKU" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-1"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="SKU" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-1"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-7 col-sm-7 col-md-2"><div class="form-group"><input name="list['+y+'][]" type="text" placeholder="Type Item Quantity" class="form-control"/></div></div><div class="col-xs-1 col-sm-7 col-md-1"><a href="javascript:void(0);" class="list_remove_button1 btn btn-danger">-</a></div></div>'; //New input field html 
+	        $('.sub-wrapper').append(list_fieldHTML1); //Add field html
+	    }
+        });
+    
+        //Once remove button is clicked
+        $('.sub-wrapper').on('click', '.list_remove_button1', function()
+        {
+           $(this).closest('div.row').remove(); //Remove field html
+           y--; //Decrement field counter
+        });
+		
+});
+
+function showlistsku()
+{
+	
+	$('.sub-wrapper').toggle();
+}
+
+function change_round_helper(workcount,activitycount)
+{
+	var mainvalue=$('#unit_price_'+workcount+'').val();
+	
+	var mainvalue1=$('#sub_total_sp'+workcount+'').html();
+	
+	var rounderhelper=mainvalue  - mainvalue1;
+	$('#round_helper'+workcount+'').val(rounderhelper);
+	
+	var qty=$('#qty'+workcount+'').val();
+	
+	var tofinal=qty * mainvalue;
+	$('#tot'+workcount+'').html(tofinal);
+	$('#amount_'+workcount+'').val(tofinal);
+	
+	 tot_amt = 0;
+				$('input.amt').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						tot_amt += value;
+						
+					}
+				});
+					
+					$('#subtotal').html(tot_amt);
+$('#subtotal_amt').val(tot_amt);
+	
+	
+		total_eucost = 0;
+$('input.sub_cs').each(function() { 
+					var value = parseFloat($(this).val());
+					
+					if (!isNaN(value)){ 			
+						total_eucost += value;
+						
+					}		
+});
+
+
+$('#estimation_profit').html(tot_amt-total_eucost);
+			$('#estimation_profit_amt').val(tot_amt-total_eucost);
+	
+}
+	</script>
+	
+	

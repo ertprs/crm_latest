@@ -1,0 +1,199 @@
+<?php include_once( APPPATH . 'views/inc/ciuis_data_table_header.php' ); ?>
+<?php $appconfig = get_appconfig(); ?>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<style>
+.selectpicker > .dropdown .dropdown-menu {
+	padding:5px;
+}
+</style>
+<div class="ciuis-body-content" ng-controller="Attendance_Controller">
+
+ <div class="main-content container-fluid col-xs-12 col-md-12 col-lg-12" layout="row" layout-wrap>
+    
+      <div class="main-content container-fluid col-xs-12 col-md-3 col-lg-3">
+          <?php $path = $this->uri->segment( 3 ); ?>
+    <div class="panel-heading"> <strong><?php echo 'Attendance'; ?></strong> <span class="panel-subtitle"><?php //echo lang('tasksituationsdesc'); ?></span>  <select class="form-control" name="filter_type" id="filter_type" onchange="select_filter(this.value)">
+             <option value="1" <?php if($path == 1) {  echo 'selected="selected"'; } ?>>Today</option>
+             <option value="2" <?php if($path == 2) {  echo 'selected="selected"'; } ?>>Yesterday</option>
+         </select> </div>
+  
+       
+   
+    <div class="row" style="padding: 0px 20px 0px 20px;">
+      <div class="col-md-6 col-xs-6 border-right text-uppercase">
+        <div class="tasks-status-stat">
+          <h3 class="text-bold ciuis-task-stat-title"> <span class="task-stat-number" ng-bind="tasks.length"></span> <span class="task-stat-all" ng-bind="'/'+' '+tasks.length+' '+'<?php echo lang('Contacts') ?>'"></span> </h3>
+          <span class="ciuis-task-percent-bg"> <span class="ciuis-task-percent-fg" style="width: {{ tasks.length / tasks.length }}%;"></span> </span> </div>
+        <span style="color:#989898"><?php echo lang('All'); ?></span> </div>
+      <div class="col-md-6 col-xs-6 border-right text-uppercase">
+        <div class="tasks-status-stat">
+          <h3 class="text-bold ciuis-task-stat-title"> <span class="task-stat-number" ng-bind="(tasks | filter:{type:'business'}).length"></span> <span class="task-stat-all" ng-bind="'/'+' '+tasks.length+' '+'<?php echo lang('Contacts') ?>'"></span> </h3>
+          <span class="ciuis-task-percent-bg"> <span class="ciuis-task-percent-fg" style="width: {{(tasks | filter:{type:'business'}).length * 100 / tasks.length }}%;"></span> </span> </div>
+        <span style="color:#989898"><?php echo lang('Companies'); ?></span> </div>
+      <div class="col-md-6 col-xs-6 border-right text-uppercase">
+        <div class="tasks-status-stat">
+          <h3 class="text-bold ciuis-task-stat-title"> <span class="task-stat-number" ng-bind="(tasks | filter:{type:'person'}).length"></span> <span class="task-stat-all" ng-bind="'/'+' '+tasks.length+' '+'<?php echo lang('Contacts') ?>'"></span> </h3>
+          <span class="ciuis-task-percent-bg"> <span class="ciuis-task-percent-fg" style="width: {{(tasks | filter:{type:'person'}).length * 100 / tasks.length }}%;"></span> </span> </div>
+        <span style="color:#989898"><?php echo lang('Persons'); ?></span> </div>
+     
+    </div>
+  </div>
+    <div class="main-content container-fluid col-xs-12 col-md-9 col-lg-9 md-p-0">
+   <div class="md-toolbar-tools bg-white">
+        <h2 flex md-truncate class="text-bold"><?php echo 'Attendance'; ?> <br>
+        
+         </h2>
+        
+        <div class="ciuis-external-search-in-table">
+          <input ng-model="task_search" class="search-table-external" id="search" name="search" type="text" placeholder="<?php echo lang('search_by').' '.lang('contacts').' '.lang('name')   ?>">
+          <md-button class="md-icon-button" aria-label="Search" ng-cloak>
+            <md-tooltip md-direction="bottom"><?php echo lang('search').' '.lang('contacts') ?></md-tooltip>
+            <md-icon><i class="ion-search text-muted"></i></md-icon>
+          </md-button>
+        </div>
+        <md-button ng-click="toggleFilter()" class="md-icon-button" aria-label="Filter" ng-cloak>
+          <md-tooltip md-direction="bottom"><?php echo lang('filter').' '.lang('contacts') ?></md-tooltip>
+          <md-icon><i class="ion-android-funnel text-muted"></i></md-icon>
+        </md-button>
+        
+         
+         <md-menu>
+		<md-button aria-label="Convert" class="md-icon-button" ng-click="$mdMenu.open($event)" ng-cloak>
+              <md-icon><i class="ion-android-add-circle text-success"></i></md-icon>
+            </md-button>
+         <md-menu-content width="4">
+		 <md-menu-item>
+          <a href="<?php echo base_url('attendance/create');?>">Manual Entry</a>
+		  </md-menu-item>
+		  <md-menu-item>
+          <a href="<?php echo base_url('workshift');?>">Work Shift</a>
+		  </md-menu-item>
+		   </md-menu-content>
+		   </md-menu>
+           
+      </div>
+    </md-toolbar>   
+    <md-content>
+        <div id="mytable">
+              <div  class="bg-white">
+        <md-table-container>
+          <table md-table  md-progress="promise" ng-cloak>
+            <thead md-head md-order="task_list.order">
+              <tr md-row>
+                <th md-column md-order-by="name"><span><?php echo 'Date'; ?></span></th>
+                 <th md-column md-order-by="address"><span><?php echo 'Employee'; ?></span></th> 
+				
+                <th md-column md-order-by="cperson"><span><?php echo 'Time In'; ?></span></th>
+               <th md-column md-order-by="cnum"><span><?php echo 'Time Out'; ?></span></th>
+				  <th md-column md-order-by="cemail"><span><?php echo 'Total Hours' ?></span></th> 
+			
+              </tr>
+            </thead>
+            <tbody md-body>
+                
+                <?php foreach($attend_details as $details) {  ; ?>
+                <tr class="select_row" md-row >
+                <td md-cell><?php echo $details["attendance_date"];?></td>
+                 <td md-cell><?php echo $details["staffname"];?></td>
+                 <?php $days = explode(',',$details["day"]);  ?>
+                  <td md-cell><?php echo $days["0"];?></td>
+                   <td md-cell><?php echo $days["1"];?></td>
+                    <td md-cell><?php $time1 = strtotime($days["1"]);
+$time2 = strtotime($days["0"]);
+$difference = round(abs($time2 - $time1) / 3600,2);
+echo $difference; ?></td>
+                    </tr>
+                <?php } ?>
+                
+             </tbody>
+          </table>
+        </md-table-container>
+        <md-table-pagination ng-show="tasks.length > 0" md-limit="task_list.limit" md-limit-options="limitOptions" md-page="task_list.page" md-total="{{tasks.length}}" ></md-table-pagination>
+       <!-- <md-content ng-show="!tasks.length" class="md-padding no-item-data" ng-cloak><?php //echo lang('notdata') ?></md-content> -->
+      </div>
+      </div>
+    </md-content>    
+  </div>
+    </div>
+  
+
+   
+<div id="attn_info">
+       
+    </div>
+
+<?php include_once( APPPATH . 'views/inc/other_footer.php' ); ?>
+<script src="<?php echo base_url('assets/js/ciuis_data_table.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/attendance.js'); ?>"></script>
+<?php include_once( APPPATH . 'views/inc/validate_footer.php' ); ?>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> 
+  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+ <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+ <script>
+    $(document).ready(function(){
+      var date_input=$('.newdatepicker'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+   
+      date_input.datepicker({dateFormat:'yy-mm-dd',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,changeYear: true,changeMonth: true});
+      
+      
+    })
+	
+	function get_attendance(){
+	    var department = $('#department').val();
+	    var from_date = $('#from_date').val();
+	   var to_date = $('#to_date').val();
+	   $.ajax({ 
+				type: "POST",
+		
+				url:'<?php echo base_url(); ?>attendance/summary',
+				data: {department:department,from_date:from_date,to_date:to_date}
+			}).done(function( data ) {//alert(data);
+				$( "#attn_info").html( data );
+				$('#example').DataTable();
+			 });
+	
+		// url = "<?php echo base_url(); ?>attendance/create?id="+department+"&date="+attendance_date;
+		
+	
+		//window.location.href =  url;
+		
+	}
+	
+	function select_filter(val){
+	    //alert(val);
+	    window.location.href = '<?php echo base_url(); ?>attendance/index/'+val;
+
+	    /* var filter_type = val;
+	       $.ajax({ 
+				type: "POST",
+		
+				url:'<?php //echo base_url(); ?>attendance/index/'+filter_type,
+				 cache       : false,
+        contentType : true,
+        processData : true,
+			success: function(response) {
+			   // alert(response)
+				$( "#mytable").html( response );
+					 //$("#mytable").appendTo("body");
+
+				//window.location.reload();
+					// $("#mytable").appendTo("body");
+				 
+			 }
+	       }); */
+	}
+	
+</script>

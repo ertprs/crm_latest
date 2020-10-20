@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://arty.flatheme.net/home/agency-clean-2.html -->
+<html lang="en" class="skrollr skrollr-desktop"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+        <meta name="keywords" content="">
+		<title>Arty - Agency Clean 2</title>
+		<!-- Favicon -->
+        <link href="http://arty.flatheme.net/assets/images/favicon.png" rel="shortcut icon">
+		<!-- CSS -->
+		<link href="./Arty - Agency Clean 2_files/bootstrap.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/magnific-popup.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/owl.carousel.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/owl.theme.default.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/sal.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/main.css" rel="stylesheet">
+		<!-- Fonts/Icons -->
+		<link href="./Arty - Agency Clean 2_files/all.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/themify-icons.min.css" rel="stylesheet">
+		<link href="./Arty - Agency Clean 2_files/simple-line-icons.css" rel="stylesheet">
+	<script type="text/javascript" charset="UTF-8" src="./Arty - Agency Clean 2_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Arty - Agency Clean 2_files/util.js.download"></script></head>
+	<body data-preloader="1" class="loaded">
+
+		<div class="wrapper">
+
+			<!-- Scroll to Top -->
+			<div class="scrolltotop">
+				<a class="button-circle button-circle-sm button-circle-black" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="ti-arrow-up"></i></a>
+			</div>
+			<!-- end Scroll to Top -->
+
+			<!-- Header -->
+			<div class="header dark fixed absolute-light">
+				<div class="container">
+					<div class="logo">
+						<h5 class="uppercase letter-spacing-2"><a href="http://arty.flatheme.net/">Arty</a></h5>
+					</div>
+					<!-- end header-menu-wrapper -->
+					<!-- Menu Toggle on Mobile -->
+					<button class="m-toggle">
+						<span></span>
+					</button>
+				<div class="header-menu-wrapper">
+						<!-- Menu -->
+						<ul class="header-menu">
+							<li class="m-item">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Home</a>
+								<ul class="m-dropdown">
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Agency</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/agency-clean-1.html">Agency Clean 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/agency-clean-2.html">Agency Clean 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/agency-creative.html">Agency Creative</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/agency-minimal.html">Agency Minimal</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/agency-simple.html">Agency Simple</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Portfolio</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-clean-1.html">Portfolio Clean 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-clean-2.html">Portfolio Clean 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-fullwidth.html">Portfolio Fullwidth</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-metro.html">Portfolio Metro</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-pinterest.html">Portfolio Pinterest</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-simple-1.html">Portfolio Simple 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-simple-2.html">Portfolio Simple 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-simple-3.html">Portfolio Simple 3</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-carousel-1.html">Portfolio Carousel 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/portfolio-carousel-2.html">Portfolio Carousel 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Studio</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/studio-1.html">Studio 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/studio-2.html">Studio 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Blog</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/blog-clean.html">Blog Clean</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/blog-minimal.html">Blog Minimal</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Corporate</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/corporate-1.html">Corporate 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/home/corporate-2.html">Corporate 2</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="m-item">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Pages</a>
+								<ul class="m-dropdown">
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">About</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/about/about-us-1.html">About us 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/about/about-us-2.html">About us 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/about/about-us-3.html">About us 3</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/about/about-us-4.html">About us 4</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Services</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/services/services-1.html">Services 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/services/services-2.html">Services 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Prices</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/prices/prices-1.html">Prices 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/prices/prices-2.html">Prices 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Contact</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/contact/contact-1.html">Contact 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/contact/contact-2.html">Contact 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Utility</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/utility/faq.html">FAQ</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/utility/404.html">404</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/pages/utility/coming-soon.html">Coming Soon</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="m-item">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Portfolio</a>
+								<ul class="m-dropdown">
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Title Overlay</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-overlay/hover-style-1.html">Hover Style 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-overlay/hover-style-2.html">Hover Style 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-overlay/hover-style-3.html">Hover Style 3</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-overlay/hover-style-4.html">Hover Style 4</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Title Outside</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-outside/hover-style-1.html">Hover Style 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-outside/hover-style-2.html">Hover Style 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/title-outside/hover-style-3.html">Hover Style 3</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Icon Overlay</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/icon-overlay/hover-style-1.html">Hover Style 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/icon-overlay/hover-style-2.html">Hover Style 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Single</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">Portfolio Single 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/single/portfolio-single-2.html">Portfolio Single 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/portfolio/single/portfolio-single-3.html">Portfolio Single 3</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="m-item">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Blog</a>
+								<ul class="m-dropdown">
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Fullwidth</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/blog-fullwidth-clean.html">Clean</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/blog-fullwidth-minimal.html">Minimal</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link" href="http://arty.flatheme.net/blog/blog-list.html">List</a>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link" href="http://arty.flatheme.net/blog/blog-masonry.html">Masonry</a>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Single</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/single/blog-single-standard.html">Standard</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/single/blog-single-gallery.html">Gallery</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/single/blog-single-carousel.html">Carousel</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/blog/single/blog-single-video.html">Video</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="m-item m-megamenu">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Elements</a>
+								<div class="megamenu">
+									<div class="row font-small">
+										<div class="col-12 col-lg-3">
+											<ul class="list-dash">
+												<li><a href="http://arty.flatheme.net/elements/accordion.html">Accordion</a></li>
+												<li><a href="http://arty.flatheme.net/elements/bg-colors.html">Background colors</a></li>
+												<li><a href="http://arty.flatheme.net/elements/bg-image.html">Background image</a></li>
+												<li><a href="http://arty.flatheme.net/elements/blockquote.html">Blockquote</a></li>
+												<li><a href="http://arty.flatheme.net/elements/boxes.html">Boxes</a></li>
+												<li><a href="http://arty.flatheme.net/elements/buttons.html">Buttons</a></li>
+												<li><a href="http://arty.flatheme.net/elements/clients.html">Clients</a></li>
+											</ul>
+										</div>
+										<div class="col-12 col-lg-3">
+											<ul class="list-dash">
+												<li><a href="http://arty.flatheme.net/elements/countdown.html">Countdown</a></li>
+												<li><a href="http://arty.flatheme.net/elements/counter.html">Counter</a></li>
+												<li><a href="http://arty.flatheme.net/elements/fancy-box.html">Fancy box</a></li>
+												<li><a href="http://arty.flatheme.net/elements/f-box.html">Feature box</a></li>
+												<li><a href="http://arty.flatheme.net/elements/forms.html">Forms</a></li>
+												<li><a href="http://arty.flatheme.net/elements/gallery.html">Gallery</a></li>
+												<li><a href="http://arty.flatheme.net/elements/grid.html">Grid system</a></li>
+											</ul>
+										</div>
+										<div class="col-12 col-lg-3">
+											<ul class="list-dash">
+												<li><a href="http://arty.flatheme.net/elements/images.html">Images</a></li>
+												<li><a href="http://arty.flatheme.net/elements/lightbox.html">Lightbox</a></li>
+												<li><a href="http://arty.flatheme.net/elements/lists.html">Lists</a></li>
+												<li><a href="http://arty.flatheme.net/elements/maps.html">Maps</a></li>
+												<li><a href="http://arty.flatheme.net/elements/masonry.html">Masonry</a></li>
+												<li><a href="http://arty.flatheme.net/elements/progress-bars.html">Progress bars</a></li>
+												<li><a href="http://arty.flatheme.net/elements/sal.html">Scroll Animations</a></li>
+											</ul>
+										</div>
+										<div class="col-12 col-lg-3">
+											<ul class="list-dash">
+												<li><a href="http://arty.flatheme.net/elements/sf-box.html">Simple feature box</a></li>
+												<li><a href="http://arty.flatheme.net/elements/sliders.html">Sliders</a></li>
+												<li><a href="http://arty.flatheme.net/elements/team.html">Team</a></li>
+												<li><a href="http://arty.flatheme.net/elements/testimonial.html">Testimonial</a></li>
+												<li><a href="http://arty.flatheme.net/elements/text-colors.html">Text colors</a></li>
+												<li><a href="http://arty.flatheme.net/elements/text-links.html">Text links</a></li>
+												<li><a href="http://arty.flatheme.net/elements/typography.html">Typography</a></li>
+											</ul>
+										</div>
+									</div><!-- end row -->
+								</div>
+							</li>
+							<li class="m-item">
+								<a class="m-link m-dropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Features</a>
+								<ul class="m-dropdown">
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Header Menu</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-default.html">Default</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-dark.html">Dark</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-black.html">Black</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-xl.html">Extra Large</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-lg.html">Large</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-absolute-light.html">Absolute Light</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-absolute-dark.html">Absolute Dark</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-absolute-fixed.html">Absolute Fixed</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-sticky.html">Sticky</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/header-menu-font-2.html">Menu Font 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Fullscreen Menu</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/fullscreen-menu-1.html">Fullscreen Menu 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/fullscreen-menu-2.html">Fullscreen Menu 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Sidebar Menu</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-menu.html">Default</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-menu-dark.html">Dark</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-menu-black.html">Black</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-menu-right.html">Right Aligned</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Sidebar Toggle Menu</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-toggle-menu.html">Default</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-toggle-menu-dark.html">Dark</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-toggle-menu-black.html">Black</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/sidebar-toggle-menu-right.html">Right Aligned</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link m-subdropdown-toggle" href="http://arty.flatheme.net/home/agency-clean-2.html#">Footer</a>
+										<ul class="m-subdropdown">
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/footer-classic.html">Footer Classic</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/footer-clean-1.html">Footer Clean 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/footer-clean-2.html">Footer Clean 2</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/footer-simple-1.html">Footer Simple 1</a></li>
+											<li class="m-subdropdown-item"><a class="m-subdropdown-link" href="http://arty.flatheme.net/features/footer-simple-2.html">Footer Simple 2</a></li>
+										</ul>
+									</li>
+									<li class="m-dropdown-item">
+										<a class="m-dropdown-link" href="http://arty.flatheme.net/features/preloaders.html">Page Preloaders</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<!-- Close Button -->
+						<button class="close-button">
+							<span></span>
+						</button>
+					</div></div><!-- end container -->
+			</div>
+			<!-- end Header -->
+
+			<!-- Hero section -->
+			<div class="section-3xl bg-image parallax-bg" data-bg-src="../assets/images/agency-clean-2-bg.jpg" style="background-image: url(&quot;../assets/images/agency-clean-2-bg.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center 0px;">
+				<div class="bg-dark-06">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-12 col-md-10 offset-md-1">
+								<h1 class="display-2 font-weight-semi-bold uppercase letter-spacing-2 margin-0">Arty Agency</h1>
+							</div>
+						</div><!-- end row -->
+						<div class="bottom padding-30">
+							<ul class="list-inline-sm">
+								<li>
+									<a class="button-circle button-circle-sm button-circle-outline-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-facebook-f"></i></a>
+								</li>
+								<li>
+									<a class="button-circle button-circle-sm button-circle-outline-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a class="button-circle button-circle-sm button-circle-outline-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-twitter"></i></a>
+								</li>
+								<li>
+									<a class="button-circle button-circle-sm button-circle-outline-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- end container -->
+				</div>
+			</div>
+			<!-- end Hero section -->
+
+			<!-- About section -->
+			<div class="section-lg padding-bottom-0">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-10 offset-lg-1">
+							<div class="row col-spacing-50 align-items-center">
+								<div class="col-12 col-lg-6 text-lg-right">
+									<h1 class="margin-0">We're a digital design and branding agency</h1>
+								</div>
+								<div class="col-12 col-lg-6">
+									<p class="font-large font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- end container -->
+			</div>
+			<!-- end About section -->
+
+			<!-- Portfolio section -->
+			<div class="section">
+				<div class="container">
+					<div class="portfolio-masonry column-3 spacing-10 portfolio-title-overlay hover-style-2" style="position: relative; height: 705.172px;">
+						<div class="portfolio-item" style="position: absolute; left: 0px; top: 0px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-1.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="portfolio-item" style="position: absolute; left: 363px; top: 0px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-2.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="portfolio-item" style="position: absolute; left: 726px; top: 0px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-3.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="portfolio-item" style="position: absolute; left: 363px; top: 266px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-4.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="portfolio-item" style="position: absolute; left: 0px; top: 438px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-5.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="portfolio-item" style="position: absolute; left: 726px; top: 438px;">
+							<a href="http://arty.flatheme.net/portfolio/single/portfolio-single-1.html">
+								<div class="portfolio-img">
+									<img src="./Arty - Agency Clean 2_files/p-masonry-6.jpg" alt="">
+								</div>
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-box">
+										<h4 class="font-weight-normal">Project Title</h4>
+										<span class="font-small uppercase">Category</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div><!-- end container -->
+			</div>
+			<!-- end Portfolio section -->
+
+			<!-- Services section -->
+			<div class="section-lg padding-top-0">
+				<div class="container">
+					<div class="row icon-4xl">
+						<div class="col-12 col-lg-4" data-sal="fade" data-sal-delay="100">
+							<div class="d-flex">
+								<div class="d-inline-block margin-right-30">
+									<i class="ti-star text-dark-09"></i>
+								</div>
+								<div class="d-inline-block">
+									<h5 class="font-weight-normal">Branding</h5>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4" data-sal="fade" data-sal-delay="300">
+							<div class="d-flex">
+								<div class="d-inline-block margin-right-30">
+									<i class="ti-announcement text-dark-09"></i>
+								</div>
+								<div class="d-inline-block">
+									<h5 class="font-weight-normal">Social Marketing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4" data-sal="fade" data-sal-delay="500">
+							<div class="d-flex">
+								<div class="d-inline-block margin-right-30">
+									<i class="ti-camera text-dark-09"></i>
+								</div>
+								<div class="d-inline-block">
+									<h5 class="font-weight-normal">Photoshoot</h5>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- end row -->
+				</div><!-- end container -->
+			</div>
+			<!-- end Services section -->
+
+			<!-- Testimonial section -->
+			<div class="section-xl bg-image parallax-bg" data-bg-src="../assets/images/agency-clean-2-parallax.jpg" style="background-image: url(&quot;../assets/images/agency-clean-2-parallax.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center 1740.14px;">
+				<div class="bg-dark-07">
+					<div class="container">
+						<div class="owl-carousel testimonial-carousel owl-loaded owl-drag" data-owl-nav="true" data-owl-items="1" data-owl-autoplay="true" data-owl-margin="30">
+							<!-- Item 1 -->
+							
+							<!-- Item 2 -->
+							
+							<!-- Item 3 -->
+							
+						<div class="owl-stage-outer owl-height" style="height: 259px;"><div class="owl-stage" style="transform: translate3d(-1022px, 0px, 0px); transition: all 0.4s ease 0s; width: 3066px;"><div class="owl-item" style="width: 992px; margin-right: 30px;"><div class="testimonial-item">
+								<div class="margin-bottom-20">
+									<img src="./Arty - Agency Clean 2_files/avatar-1.jpg" alt="">
+								</div>
+								<div class="margin-bottom-30">
+									<h5 class="font-weight-normal margin-0 line-height-130">Rebecca Lewis</h5>
+									<span class="font-small">Entrepreneur</span>
+								</div>
+								<p class="font-large font-weight-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							</div></div><div class="owl-item active" style="width: 992px; margin-right: 30px;"><div class="testimonial-item">
+								<div class="margin-bottom-20">
+									<img src="./Arty - Agency Clean 2_files/avatar-2.jpg" alt="">
+								</div>
+								<div class="margin-bottom-30">
+									<h5 class="font-weight-normal margin-0 line-height-130">Elizabeth Jason</h5>
+									<span class="font-small">Marketing Manager</span>
+								</div>
+								<p class="font-large font-weight-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							</div></div><div class="owl-item" style="width: 992px; margin-right: 30px;"><div class="testimonial-item">
+								<div class="margin-bottom-20">
+									<img src="./Arty - Agency Clean 2_files/avatar-3.jpg" alt="">
+								</div>
+								<div class="margin-bottom-30">
+									<h5 class="font-weight-normal margin-0 line-height-130">Jude Martinez</h5>
+									<span class="font-small">Creative Director</span>
+								</div>
+								<p class="font-large font-weight-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							</div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+					</div><!-- end container -->
+				</div>
+			</div>
+			<!-- end Testimonial section -->
+
+			<!-- Team section -->
+			<div class="section-lg">
+				<div class="container">
+					<div class="section padding-top-0 text-center">
+						<div class="row">
+							<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+								<h1>Meet Our Team</h1>
+								<p class="font-large font-weight-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+							</div>
+						</div><!-- end row -->
+					</div>
+					<div class="row col-spacing-10">
+						<div class="col-12 col-md-6 col-lg-4" data-sal="fade" data-sal-delay="100">
+							<div class="team-box">
+								<div class="team-img">
+									<img src="./Arty - Agency Clean 2_files/team-1.jpg" alt="">
+								</div>
+								<div class="hover-content">
+									<div class="top">
+										<ul class="list-inline">
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-linkedin-in"></i></a></li>
+										</ul>
+									</div>
+									<div class="bottom">
+										<h5 class="font-weight-normal margin-0">Alexander Warren</h5>
+										<p>Co-Founder</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-4" data-sal="fade" data-sal-delay="250">
+							<div class="team-box">
+								<div class="team-img">
+									<img src="./Arty - Agency Clean 2_files/team-2.jpg" alt="">
+								</div>
+								<div class="hover-content">
+									<div class="top">
+										<ul class="list-inline">
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-linkedin-in"></i></a></li>
+										</ul>
+									</div>
+									<div class="bottom">
+										<h5 class="font-weight-normal margin-0">Maria Cardenas</h5>
+										<p>Creative Director</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-4" data-sal="fade" data-sal-delay="400">
+							<div class="team-box">
+								<div class="team-img">
+									<img src="./Arty - Agency Clean 2_files/team-3.jpg" alt="">
+								</div>
+								<div class="hover-content">
+									<div class="top">
+										<ul class="list-inline">
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-linkedin-in"></i></a></li>
+										</ul>
+									</div>
+									<div class="bottom">
+										<h5 class="font-weight-normal margin-0">Michael Henry</h5>
+										<p>Photographer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- end row -->
+				</div><!-- end container -->
+			</div>
+			<!-- end Team section -->
+
+			<!-- Clients section -->
+			<div class="section-sm bg-light-gray">
+				<div class="container">
+					<div class="owl-carousel owl-loaded owl-drag" data-owl-dots="false" data-owl-nav="true" data-owl-margin="30" data-owl-autoplay="true" data-owl-xs="1" data-owl-sm="2" data-owl-md="3" data-owl-lg="4" data-owl-xl="6">
+						<!-- Client box 1 -->
+						
+						<!-- Client box 2 -->
+						
+						<!-- Client box 3 -->
+						
+						<!-- Client box 4 -->
+						
+						<!-- Client box 5 -->
+						
+						<!-- Client box 6 -->
+						
+						<!-- Client box 7 -->
+						
+						<!-- Client box 8 -->
+						
+					<div class="owl-stage-outer owl-height" style="height: 67px;"><div class="owl-stage" style="transform: translate3d(-170px, 0px, 0px); transition: all 0.4s ease 0s; width: 1363px;"><div class="owl-item" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-1.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-2.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-3.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-4.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-5.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-6.png" alt=""></a>
+						</div></div><div class="owl-item active" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-7.png" alt=""></a>
+						</div></div><div class="owl-item" style="width: 140.333px; margin-right: 30px;"><div class="client-box">
+							<a href="http://arty.flatheme.net/home/agency-clean-2.html#"><img src="./Arty - Agency Clean 2_files/client-8.png" alt=""></a>
+						</div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-angle-right"></i></button></div><div class="owl-dots disabled"></div></div><!-- end owl-carousel -->
+				</div><!-- end container -->
+			</div>
+			<!-- end Clients section -->
+
+			<!-- Footer -->
+			<div class="section-xs bg-dark">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-8">
+							<div class="row">
+								<div class="col-12 col-md-4">
+									<h6 class="font-weight-normal margin-bottom-20">About us</h6>
+									<ul class="list-unstyled font-small">
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Clients</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Contact</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Our Team</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Services</a></li>
+									</ul>
+								</div>
+								<div class="col-12 col-md-4">
+									<h6 class="font-weight-normal margin-bottom-20">Useful links</h6>
+									<ul class="list-unstyled font-small">
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">FAQ</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Prices</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Process</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Terms of Use</a></li>
+									</ul>
+								</div>
+								<div class="col-12 col-md-4">
+									<h6 class="font-weight-normal margin-bottom-20">Additional links</h6>
+									<ul class="list-unstyled font-small">
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Careers</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Community</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Prices</a></li>
+										<li><a href="http://arty.flatheme.net/home/agency-clean-2.html#">Testimonial</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4 text-lg-right">
+							<p class="font-small">121 King St, Melbourne VIC 3000<br>contact@example.com</p>
+							<ul class="list-inline-sm margin-top-20">
+								<li><a class="button-circle button-circle-xs button-circle-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a class="button-circle button-circle-xs button-circle-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-twitter"></i></a></li>
+								<li><a class="button-circle button-circle-xs button-circle-white" href="http://arty.flatheme.net/home/agency-clean-2.html#"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+					</div><!-- end row -->
+					<div class="border-top padding-20 padding-right-0 padding-bottom-0 padding-left-0 margin-top-50">
+						<div class="row">
+							<div class="col-6">
+								<h4 class="uppercase letter-spacing-2 margin-0">Arty</h4>
+							</div>
+							<div class="col-6 text-right">
+								<p>© 2020 FlaTheme</p>
+							</div>
+						</div><!-- end row -->
+					</div>
+				</div><!-- end container -->
+			</div>
+			<!-- end Footer -->
+			
+		</div><!-- end wrapper -->
+
+		<!-- ***** JAVASCRIPTS ***** -->
+		<script src="./Arty - Agency Clean 2_files/jquery.min.js.download"></script>
+		<script src="./Arty - Agency Clean 2_files/js"></script>
+		<script src="./Arty - Agency Clean 2_files/plugins.js.download"></script>
+		<script src="./Arty - Agency Clean 2_files/functions.js.download"></script>
+	
+<div class="preloader preloader-1"><div><svg class="loader-circular" viewBox="25 25 50 50"><circle class="loader-path" cx="50" cy="50" r="20"></circle></svg></div></div></body></html>

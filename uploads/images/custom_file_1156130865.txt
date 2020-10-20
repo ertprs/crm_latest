@@ -1,0 +1,80 @@
+/usr/php/54/usr/bin/php-cli -v && php -v
+
+/usr/local/bin/php /home/linfotel/public_html/latest/apps/console/console.php send-campaigns > /dev/null 2>&1
+
+
+	
+xQo3q4JsaSb6
+
+linfotel_mails
+
+
+# Campaigns sender, runs each minute.
+* * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php send-campaigns >/dev/null 2>&1
+
+# Transactional email sender, runs once at 2 minutes.
+*/2 * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php send-transactional-emails >/dev/null 2>&1
+
+# Bounce handler, runs once at 10 minutes.
+*/10 * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php bounce-handler >/dev/null 2>&1
+
+# Feedback loop handler, runs once at 20 minutes.
+*/20 * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php feedback-loop-handler >/dev/null 2>&1
+
+# Delivery/Bounce processor, runs once at 3 minutes.
+*/3 * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php process-delivery-and-bounce-log >/dev/null 2>&1
+
+# Various tasks, runs each hour.
+0 * * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php hourly >/dev/null 2>&1
+
+# Daily cleaner, runs once a day.
+0 0 * * * /usr/bin/php -q C:\xampp\htdocs\mailwizz/apps/console/console.php daily >/dev/null 2>&1
+
+
+/home/linfotel/public_html/latest/
+
+hakshacart_mails
+16hlCRfNF2sK
+
+User: hakshacart_mails
+
+Database: hakshacart_mails
+
+# Campaigns sender, runs each minute.
+* * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php send-campaigns >/dev/null 2>&1
+
+# Transactional email sender, runs once at 2 minutes.
+*/2 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php send-transactional-emails >/dev/null 2>&1
+
+# Bounce handler, runs once at 10 minutes.
+*/10 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php bounce-handler >/dev/null 2>&1
+
+# Feedback loop handler, runs once at 20 minutes.
+*/20 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php feedback-loop-handler >/dev/null 2>&1
+
+# Delivery/Bounce processor, runs once at 3 minutes.
+*/3 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php process-delivery-and-bounce-log >/dev/null 2>&1
+
+# Various tasks, runs each hour.
+0 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php hourly >/dev/null 2>&1
+
+# Daily cleaner, runs once a day.
+0 0 * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php daily >/dev/null 2>&1
+
+# copy the current cron into a new file
+crontab -l > mwcron
+
+# add the new entries into the file
+echo "* * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php send-campaigns >/dev/null 2>&1" >> mwcron
+echo "*/2 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php send-transactional-emails >/dev/null 2>&1" >> mwcron
+echo "*/10 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php bounce-handler >/dev/null 2>&1" >> mwcron
+echo "*/20 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php feedback-loop-handler >/dev/null 2>&1" >> mwcron
+echo "*/3 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php process-delivery-and-bounce-log >/dev/null 2>&1" >> mwcron
+echo "0 * * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php hourly >/dev/null 2>&1" >> mwcron
+echo "0 0 * * * /opt/cpanel/ea-php72/root/usr/bin/php -q /home/hakshacart/public_html/mailwizz/apps/console/console.php daily >/dev/null 2>&1" >> mwcron
+
+# install the new cron
+crontab mwcron
+
+# remove the crontab file since it has been installed and we don't use it anymore.
+rm mwcron

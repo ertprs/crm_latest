@@ -1,0 +1,41 @@
+<?php
+class Attendance_Model extends CI_Model {
+	function __construct() {
+		parent::__construct();
+	}
+
+	function  get_attendance($current_date) {
+        $this->db->join('attendance as a','a.staff_id = s.id AND a.attendance_date = "'.$current_date.'"','left' );
+        $this->db->order_by('s.id','asc');
+        $query = $this->db->get('staff as s');
+        if($query->num_rows()>0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+
+    function  get_staff() {
+        $query = $this->db->get('staff as s');
+        if($query->num_rows()>0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+
+    function  save($data) {
+        $query = $this->db->insert('attendance', $data); 
+        if($query){ return true; } else { return false; }
+    }
+
+    function  get_today($staff_id,$current_date) {
+        $this->db->where('staff_id',$staff_id );
+        $this->db->where('attendance_date',$current_date );
+        $query = $this->db->get('attendance');
+        return $query->num_rows();
+    }
+    
+    
+   
+}

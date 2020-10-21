@@ -43,7 +43,7 @@
                 <div class="col-xs-6 login-remember">
                   <div class="ciuis-body-checkbox">
                     <input type="checkbox" name="remember" id="remember">
-                    <label for="remember">adsa <?php echo lang('loginremember')?></label>
+                    <label for="remember"><?php echo lang('loginremember')?></label>
                   </div>
                 </div>
                 <div class="col-xs-6 login-forgot-password"><a href="<?php echo base_url('login/forgot')?>"><?php echo lang('loginforget')?></a> </div>

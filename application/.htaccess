@@ -1,0 +1,10 @@
+<IfModule authz_core_module>
+    Require all denied
+
+      php_value memory_limit 512M
+php_value upload_max_filesize 512M
+
+</IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>

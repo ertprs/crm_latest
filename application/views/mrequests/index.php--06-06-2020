@@ -1,0 +1,470 @@
+<?php include_once( APPPATH . 'views/inc/ciuis_data_table_header.php' ); ?>
+<?php $appconfig = get_appconfig(); ?>
+<style>
+  .topRow {
+    margin-bottom : 30px;
+  }
+  .on-drag-enter {
+  }
+  .on-drag-hover:before {
+    display: block;
+    color: white;
+    font-size: x-large;
+    font-weight: 800;
+	
+  }
+  
+  
+    .pen body {
+	padding-top:50px;
+}
+
+/* Social Buttons - Twitter, Facebook, Google Plus */
+.btn-twitter {
+	background: #00acee;
+	color: #fff
+}
+.btn-twitter:link, .btn-twitter:visited {
+	color: #fff
+}
+.btn-twitter:active, .btn-twitter:hover {
+	background: #0087bd;
+	color: #fff
+}
+
+.btn-instagram {
+	color:#fff;
+	background-color:#3f729b;
+	border-color:rgba(0,0,0,0.2);
+}
+.btn-instagram:focus,.btn-instagram.focus {
+	color:#fff;
+	background-color:#305777;
+	border-color:rgba(0,0,0,0.2);
+}
+.btn-instagram:hover {
+	color:#fff;
+	background-color:#305777;
+	border-color:rgba(0,0,0,0.2);
+}
+
+.btn-github {
+	color:#fff;
+	background-color:#444;
+	border-color:rgba(0,0,0,0.2);
+}
+.btn-github:focus,.btn-github.focus {
+	color:#fff;
+	background-color:#2b2b2b;
+	border-color:rgba(0,0,0,0.2);
+}
+.btn-github:hover {
+	color:#fff;
+	background-color:#2b2b2b;
+	border-color:rgba(0,0,0,0.2);
+}
+
+/* MODAL FADE LEFT RIGHT BOTTOM */
+.modal.fade:not(.in).left .modal-dialog {
+	-webkit-transform: translate3d(-25%, 0, 0);
+	transform: translate3d(-25%, 0, 0);
+}
+.modal.fade:not(.in).right .modal-dialog {
+	-webkit-transform: translate3d(25%, 0, 0);
+	transform: translate3d(25%, 0, 0);
+}
+.modal.fade:not(.in).bottom .modal-dialog {
+	-webkit-transform: translate3d(0, 25%, 0);
+	transform: translate3d(0, 25%, 0);
+}
+
+.modal.right .modal-dialog {
+	position:absolute;
+	top:0;
+	right:0;
+	margin:0;
+}
+
+.modal.left .modal-dialog {
+	position:absolute;
+	top:0;
+	left:0;
+	margin:0;
+}
+
+.modal.left .modal-dialog.modal-sm {
+	max-width:300px;
+}
+
+.modal.left .modal-content, .modal.right .modal-content {
+    min-height:100vh;
+	border:0;
+}
+
+</style>
+<div class="ciuis-body-content" ng-controller="Mrequests_Controller">
+  <div class="main-content container-fluid col-xs-12 col-md-12 col-lg-12">
+  <div class="main-content container-fluid col-xs-12 col-md-3 col-lg-3 md-pl-0">
+    <div class="panel-default panel-table borderten lead-manager-head">
+      <md-content style="border-bottom: 2px dashed #e8e8e8; padding-bottom: 20px;" layout-padding>
+        <div class="col-md-3 col-xs-6 border-right text-uppercase">
+          <div class="tasks-status-stat">
+            <h4 class="text-bold ciuis-task-stat-title">
+              <span class="task-stat-number ng-binding" ng-bind="(tickets | filter:{status:'1'}).length"></span>
+              <span class="task-stat-all ng-binding" ng-bind="'/'+' '+tickets.length+' '+'<?php echo 'Requests' ?>'"></span>
+            </h4>
+            <span class="ciuis-task-percent-bg">
+              <span class="ciuis-task-percent-fg" style="width: {{(tickets | filter:{status:'1'}).length * 100 / tickets.length }}%;"></span>
+            </span>
+          </div>
+          <span style="color:#989898"><?php echo lang('open') ?></span>
+        </div>
+        <div class="col-md-3 col-xs-6 border-right text-uppercase">
+          <div class="tasks-status-stat">
+            <h4 class="text-bold ciuis-task-stat-title">
+              <span class="task-stat-number ng-binding" ng-bind="(tickets | filter:{request_type:'1'}).length"></span>
+              <span class="task-stat-all ng-binding" ng-bind="'/'+' '+tickets.length+' '+'<?php echo 'Material Request' ?>'"></span>
+            </h4>
+            <span class="ciuis-task-percent-bg">
+              <span class="ciuis-task-percent-fg" style="width: {{(tickets | filter:{status:'2'}).length * 100 / tickets.length }}%;"></span>
+            </span>
+          </div>
+          <span style="color:#989898"><?php echo lang('inprogress') ?></span>
+        </div>
+        <div class="col-md-3 col-xs-6 border-right text-uppercase">
+          <div class="tasks-status-stat">
+            <h4 class="text-bold ciuis-task-stat-title">
+              <span class="task-stat-number ng-binding" ng-bind="(tickets | filter:{status_id:'3'}).length"></span>
+              <span class="task-stat-all ng-binding" ng-bind="'/'+' '+tickets.length+' '+'<?php echo lang('ticket') ?>'"></span>
+            </h4>
+            <span class="ciuis-task-percent-bg">
+              <span class="ciuis-task-percent-fg" style="width: {{(tickets | filter:{status_id:'3'}).length * 100 / tickets.length }}%;"></span>
+            </span>
+          </div>
+          <span style="color:#989898"><?php echo lang('answered') ?></span>
+        </div>
+        <div class="col-md-3 col-xs-6 border-right text-uppercase">
+          <div class="tasks-status-stat">
+            <h4 class="text-bold ciuis-task-stat-title">
+              <span class="task-stat-number ng-binding" ng-bind="(tickets | filter:{status_id:'4'}).length"></span>
+              <span class="task-stat-all ng-binding" ng-bind="'/'+' '+tickets.length+' '+'<?php echo lang('ticket') ?>'"></span>
+            </h4>
+            <span class="ciuis-task-percent-bg">
+              <span class="ciuis-task-percent-fg" style="width: {{(tickets | filter:{status_id:'4'}).length * 100 / tickets.length }}%;"></span>
+            </span>
+          </div>
+          <span style="color:#989898"><?php echo lang('closed') ?></span>
+        </div>
+      </md-content>
+      <div class="ticket-contoller-left">
+        <div id="tickets-left-column text-left">
+          <div class="col-md-12 ticket-row-left text-left">
+            <div class="tickets-vertical-menu">
+              <a ng-click="TicketsFilter = NULL" class="highlight text-uppercase"><i class="fa fa-inbox fa-lg" aria-hidden="true"></i> <?php echo 'All Requests'?> <span class="ticket-num" ng-bind="tickets.length"></span></a>
+              <a ng-click="TicketsFilter = {request_type: 1}" class="side-tickets-menu-item"><?php echo 'Material Request'; ?> <span class="ticket-num" ng-bind="(tickets | filter:{request_type:'1'}).length"></span></a>
+              <a ng-click="TicketsFilter = {request_type: 2}" class="side-tickets-menu-item"><?php echo 'Leave Request' ?> <span class="ticket-num" ng-bind="(tickets | filter:{request_type:'2'}).length"></span></a>
+              <a ng-click="TicketsFilter = {request_type: 3}" class="side-tickets-menu-item"><?php echo 'Bill Request' ?> <span class="ticket-num" ng-bind="(tickets | filter:{request_type:'3'}).length"></span></a>
+              <a ng-click="TicketsFilter = {request_type: 4}" class="side-tickets-menu-item"><?php echo 'Salary Request' ?> <span class="ticket-num" ng-bind="(tickets | filter:{request_type:'4'}).length"></span></a>
+			   <a ng-click="TicketsFilter = {request_type: 5}" class="side-tickets-menu-item"><?php echo 'Other Request' ?> <span class="ticket-num" ng-bind="(tickets | filter:{request_type:'5'}).length"></span></a>
+			   <h5 href="#" class="menu-icon active text-uppercase text-muted"><i class="fa fa-file-text fa-lg" aria-hidden="true"></i><?php echo 'Status' ?></h5>
+              <a ng-click="TicketsFilter = {status: 2}" class="side-tickets-menu-item"><?php echo 'Approved' ?> <span class="ticket-num" ng-bind="(tickets | filter:{status:'1'}).length"></span></a>
+              <a ng-click="TicketsFilter = {status: 1}" class="side-tickets-menu-item"><?php echo 'Pending' ?> <span class="ticket-num" ng-bind="(tickets | filter:{status:'2'}).length"></span></a>
+              <a ng-click="TicketsFilter = {status: 3}" class="side-tickets-menu-item"><?php echo 'Declined' ?> <span class="ticket-num" ng-bind="(tickets | filter:{status:'3'}).length"></span></a>
+              <h5 href="#" class="menu-icon active text-uppercase text-muted"><i class="fa fa-file-text fa-lg" aria-hidden="true"></i><?php echo lang('filterbypriority') ?></h5>
+              <a ng-click="TicketsFilter = {priority_id: 1}" class="side-tickets-menu-item"><?php echo lang('low') ?> <span class="ticket-num" ng-bind="(tickets | filter:{priority_id:'1'}).length"></span></a>
+              <a ng-click="TicketsFilter = {priority_id: 2}" class="side-tickets-menu-item"><?php echo lang('medium') ?> <span class="ticket-num" ng-bind="(tickets | filter:{priority_id:'2'}).length"></span></a>
+              <a ng-click="TicketsFilter = {priority_id: 3}" class="side-tickets-menu-item"><?php echo lang('high') ?> <span class="ticket-num" ng-bind="(tickets | filter:{priority_id:'3'}).length"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content container-fluid col-xs-12 col-md-9 col-lg-9 md-p-0 lead-table">
+    <md-toolbar class="toolbar-white">
+      <div class="md-toolbar-tools">
+        <h2 flex md-truncate class="text-bold"><?php echo 'Requests'; ?> <small>(<span ng-bind="tickets.length"></span>)</small><br>
+          <small flex md-truncate><?php //echo lang('tracktickets'); ?></small>
+        </h2>
+        <md-button ng-if="!KanbanBoard" ng-click="ShowKanban()"class="md-icon-button" aria-label="Show Kanban" ng-cloak>
+          <md-tooltip md-direction="bottom"><?php echo lang('showkanban'); ?></md-tooltip>
+          <md-icon><i class="mdi mdi-view-week text-muted"></i></md-icon>
+        </md-button>
+        <md-button ng-if="KanbanBoard" ng-click="HideKanban()"class="md-icon-button" aria-label="Show List" ng-cloak>
+          <md-tooltip md-direction="bottom"><?php echo lang('showlist'); ?></md-tooltip>
+          <md-icon><i class="mdi mdi-view-list text-muted"></i></md-icon>
+        </md-button>
+        <?php if (check_privilege('tickets', 'create')) { ?> 
+          <md-button ng-click="Create()" class="md-icon-button" aria-label="New" ng-cloak>
+            <md-tooltip md-direction="bottom"><?php echo lang('newticket') ?></md-tooltip>
+            <md-icon><i class="ion-plus-round text-muted"></i></md-icon>
+          </md-button>
+        <?php } ?>
+      </div>
+    </md-toolbar>
+    <div ng-show="ticketsLoader" layout-align="center center" class="text-center" id="circular_loader">
+      <md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>
+      <p style="font-size: 15px;margin-bottom: 5%;">
+        <span>
+          <?php echo lang('please_wait') ?> <br>
+          <small><strong><?php echo lang('loading'). ' '. lang('tickets').'...' ?></strong></small>
+        </span>
+      </p>
+    </div>
+    
+    <md-content ng-show="!ticketsLoader" class="md-pt-0 bg-white" ng-cloak>
+      <md-table-container ng-show="tickets.length > 0">
+        <table md-table  md-progress="promise" ng-cloak>
+          <thead md-head md-order="ticket_list.order">
+            <tr md-row>
+              
+              <th md-column md-order-by="name"><span><?php echo 'Request Type'; ?></span></th>
+              <th md-column md-order-by="name"><span><?php echo 'Name'; ?></span></th>
+              <th md-column md-order-by="name"><span><?php echo 'Status'; ?></span></th>
+              <th md-column md-order-by="name"><span><?php echo 'Created'; ?></span></th>
+              <th md-column md-order-by="name"><span><?php echo 'Requested By'; ?></span></th>
+			   <th md-column md-order-by="name"><span><?php echo 'Action'; ?></span></th>
+            </tr>
+          </thead>
+          <tbody md-body>
+            <tr class="select_row" md-row ng-repeat="ticket in tickets | orderBy: ticket_list.order | limitTo: ticket_list.limit : (ticket_list.page -1) * ticket_list.limit | filter: TicketsFilter |  filter: ticket.FilteredData" class="cursor">
+            
+              <td md-cell>
+                 <div id="{{ticket.id}}" onclick="materialview(this.id)" class="table-icon deleteIcon"><a class="link cursor">{{ticket.req_type}}</a></div>
+                
+              </td>
+			  <td md-cell>
+                {{ticket.name}}
+                
+              </td>
+			   <td md-cell>
+                {{ticket.status_type}}
+                
+              </td>
+			  <td md-cell>
+                {{ticket.created | date : "dd-MM-yyyy" : 0}}
+                
+              </td>
+			  <td md-cell>
+              <md-card-title-media > 
+            <img src="<?php echo base_url('uploads/images/{{ticket.staffavatar}}'); ?>" alt="Avatar" class="staff_img" style="width:40px;height:40px"></md-card-title-media>
+			</td>
+			<td md-cell>
+                 
+           
+<div id="inline">
+     <div class="col-sm-3" id="{{ticket.id}}" onclick="update(this.id)"><i class="ion-compose  text-muted"></i></div>
+ <div class="col-sm-3" id="{{ticket.id}}" onclick="deletematerial(this.id)"><i class="ion-trash-b text-muted"></i></div>
+          
+             
+
+</div>
+              </td>
+              
+		
+            </tr>
+          </tbody>
+        </table>
+      </md-table-container>
+      <md-table-pagination ng-show="tickets.length > 0" md-limit="ticket_list.limit" md-limit-options="limitOptions" md-page="ticket_list.page" md-total="{{tickets.length}}" ></md-table-pagination>
+        <md-content ng-show="!tickets.length" class="md-padding no-item-data"><?php echo lang('notdata') ?></md-content>
+      </md-content>
+    </div>
+  </div>
+  <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="Create" ng-cloak style="width: 450px;">
+    <md-toolbar class="toolbar-white">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="close()" class="md-icon-button" aria-label="Close">
+         <i class="ion-android-arrow-forward"></i>
+       </md-button>
+       <md-truncate><?php echo lang('create') ?></md-truncate>
+     </div>
+   </md-toolbar>
+   <md-content layout-padding="">
+    <md-content layout-padding>
+      <?php echo form_open_multipart('mrequests/create'); ?> 
+<div class="form-group">
+<select class="form-control" name="request_type" id="request_type" required onchange="select_req_type(this.value)">
+<option value="0">Select Request Type</option>
+<option value="1">Material Request</option>
+<option value="2">Leave Request</option>
+<option value="3">Bill Request</option>
+<option value="4">Salary Request</option>
+<option value="5">Other Request</option>
+</select>
+</div>	  
+<div id="form-details"></div>
+<input type="submit" class="btn btn-success col-md-12"  value="Add">
+      <?php echo form_close(); ?>
+    </md-content>
+  </md-content>
+</md-sidenav>
+<div class="modal fade right" id="sidebar-right" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-sm" role="document" style="width: 400px;">
+<div class="modal-content">
+
+<div class="modal-body">
+
+<div id="update_details"></div>
+		   
+		
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+
+</div>
+<?php include_once( APPPATH . 'views/inc/other_footer.php' ); ?>
+<script src="<?php echo base_url('assets/js/ciuis_data_table.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/mrequests.js') ?>"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+ 
+<style>
+.newdatepicker { z-index: 3000 !important; }
+.user-display-avatar{top:0px;left: 13px;}
+.user-display-avatar img{width: 130px;   height: 130px;}
+
+#inline{height:auto;display:flex;}
+.one,.two{width:30%;height:100px;margin:10px;}
+.ion-trash-b{font-size:20px;}
+.ion-compose{font-size:20px;}
+</style>
+
+<script>
+$(document).ready(function(){
+      var date_input=$('.newdatepicker'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+   
+      date_input.datepicker({dateFormat:'dd-mm-yy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,changeYear: true,changeMonth: true});
+			
+			$('.emp').select2({ 
+			    
+			});
+    })
+
+
+function select_req_type(val){
+	$.ajax({
+            url: '<?php print base_url();?>mrequests/form/'+val,
+			 type        : 'post',
+            cache       : false,
+        contentType : true,
+        processData : true,
+        
+            success: function(response){
+
+				$('#form-details').html(response);
+				$('.proj').select2({ });
+				$('.mat').select2({ });
+				 var date_input=$('.newdatepicker'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+   
+      date_input.datepicker({dateFormat:'yy-mm-dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,changeYear: true,changeMonth: true});
+			
+			$('.emp').select2({ 
+			    
+			});
+			
+$('#rejoin_date').change(function(){
+     
+	var start_date = $('#leave_start_date').val();
+	var rejoin_date = $('#rejoin_date').val();
+    var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
+    date1 = new Date(start_date);
+    date2 = new Date(rejoin_date);
+    var timediff = date2 - date1;
+    
+    var days = Math.floor(timediff / day); 
+       
+    $('#no_of_days').val(days);
+});
+
+				//$('#exampleModal').modal('show');
+                $('.rd').on('click',function() {
+	
+	if($('#project').is(':checked')) {   $('#pr').show() };
+	if($('#stock').is(':checked')) {     $('#pr').hide() };
+});
+
+            },
+        }); 
+		
+}
+
+function select_material(val){
+	
+	var id = val;
+	$.ajax({
+              url : "<?php echo base_url(); ?>requests/get_product_data",
+              data:{id : id},
+              method:'GET',
+              dataType:'json',
+              success:function(response) {
+             
+               
+				 $('[name="unit_type"]').val(response.unit_type);
+				
+            }
+          });
+	
+}
+function update(id){
+       //alert(id);
+               
+           	 $.ajax({
+              url : "<?php echo base_url(); ?>mrequests/edit_request",
+              data:{id : id},
+              method:'POST',
+             // dataType:'json',
+              success:function(response) {
+                 // alert("dsafds");
+                  //console.log(response)
+                  $('#update_details').html(response);
+               $("#sidebar-right").modal ("show");
+               // $('.selectpicker').selectpicker('refresh');
+               
+               
+			  }
+			  
+			 })
+			 
+}
+
+function select_salarytype(val){
+	//alert(val);
+	var type = val;
+	
+	if(type == 2){
+			$('#fr_date').show();
+			$('#t_date').show();
+		
+	}else{
+		$('#fr_date').hide();
+			$('#t_date').hide();
+	}
+	
+	
+	
+}
+
+
+
+
+</script>

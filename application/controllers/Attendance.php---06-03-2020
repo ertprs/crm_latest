@@ -1,0 +1,146 @@
+<?php
+defined( 'BASEPATH' )OR exit( 'No direct script access allowed' );
+class Attendance extends CIUIS_Controller {
+
+	public function  __construct() {
+        parent::__construct();
+        $this->load->model("Attendance_Model");
+		$this->load->model("Settings_Model");
+		$this->load->model("Staff_Model");
+        $this->load->helper('security');     
+    }
+
+	function index() {
+		$data[ 'title' ] = lang( 'staff' );
+		$current_date = date('Y-m-d');
+		$data[ 'departments' ] = $this->Settings_Model->get_departments();
+		$data[ 'staff' ] = $this->Settings_Model->get_departments();
+		$data['attendance'] = $this->Attendance_Model->get_attendance($current_date);
+		$data['attendance_date'] = $current_date;
+		$this->load->view( 'attendance/index', $data );
+	} 
+
+	function month() {
+		$data[ 'title' ] = lang( 'staff' );
+		$current_date = date('Y-m-d');
+		$data['attendance_date'] = $current_date;
+		$data['staff'] = $this->Attendance_Model->get_staff();
+		$this->load->view( 'attendance/month', $data );
+	} 
+
+   	public function create() {
+   	    
+		$data[ 'departments' ] = $this->Settings_Model->get_departments();
+		if(isset($_GET['id'])){
+		$data['department_id'] = $_GET['id'];
+		$data['attendance_date'] = $_GET['date'];
+		$data['employees'] = $this->Staff_Model->get_staff_department_wise($data['department_id']);
+		$data['attendance'] = $this->Attendance_Model->get_attendance_details($data['department_id'],$data['attendance_date']);
+			$data['attendance_timings'] = $this->Attendance_Model->get_attendance_timings($data['department_id'],$data['attendance_date']);
+		
+		}else{
+			$data['department_id'] = '';
+			$data['employees'] = '';
+		}
+    	if($this->input->server("REQUEST_METHOD")=="POST"){ 
+
+					$data = $this->input->post() ;
+					$attendance_date = strtotime($_POST['attendance_date']);
+					$month = date("m", $attendance_date);
+					$day = date("d", $attendance_date);
+						$data['attendance'] = $this->Attendance_Model->get_attendance_details($data['department'],$_POST['attendance_date']);
+					
+						$data['employees'] = $this->Staff_Model->get_staff_department_wise($data['department']);
+					 if(empty($data['attendance'])){
+					foreach($data['employees'] as $k =>  $emp){
+					
+						$params = array(
+						'day_'.(int)$day => $this->input->post('staff_'.$emp['id']),
+						'staff_id' => $emp['id'],
+						'attendance_date' => $_POST['attendance_date'],
+						'department' => $this->input->post('department')					
+						);
+					
+			
+							$this->Attendance_Model->save($params);
+					} 
+				    	 
+					foreach($data['employees'] as $k =>  $emp){
+					
+					
+					
+						$sstf_timings = $this->input->post('staff');
+				
+						$timings = implode(',',$sstf_timings[$emp['id']]);
+						
+					    $params = array(
+					            'day_'.(int)$day => $timings,
+						'staff_id' => $emp['id'],
+						'attendance_date' => $_POST['attendance_date'],
+						'department' => $this->input->post('department')
+					        
+					        );
+					        
+					        	$this->Attendance_Model->savetimings($params);
+						
+					} 
+					 }else{
+					     
+					     
+					     	foreach($data['employees'] as $k =>  $emp){
+					
+						$params = array(
+						'day_'.(int)$day => $this->input->post('staff_'.$emp['id']),
+						'staff_id' => $emp['id'],
+						'attendance_date' => $this->input->post('attendance_date'),
+						'department' => $this->input->post('department')					
+						);
+					
+			
+							$this->Attendance_Model->update_attendance($emp['id'],$params);
+					} 
+				    	 
+					foreach($data['employees'] as $k =>  $emp){
+					
+					
+					
+						$sstf_timings = $this->input->post('staff');
+				
+						$timings = implode(',',$sstf_timings[$emp['id']]);
+						
+					    $params = array(
+					            'day_'.(int)$day => $timings,
+						'staff_id' => $emp['id'],
+						'attendance_date' => $this->input->post('attendance_date'),
+						'department' => $this->input->post('department')
+					        
+					        );
+					        
+					        	$this->Attendance_Model->updatetimings($emp['id'],$params);
+						
+			
+					     
+					 }
+					 }
+				
+					$this->session->set_flashdata('message', 'Successfully Created');
+					redirect('attendance/index', 'refresh');
+        }
+     	$data['title']="Attendance Entry";
+        $this->load->view( 'attendance/create', $data );
+        
+    }
+    public function summary(){
+        $department = $this->input->post('department');
+        $from_date = $this->input->post('from_date');
+        $to_date = $this->input->post('to_date');
+        $data['attn_details'] = $this->Attendance_Model->getmonthlyattendance($department,$from_date,$to_date);
+        $data['attn_timings'] = $this->Attendance_Model->getmonthlytimings($department,$from_date,$to_date);
+        
+        
+    
+     $this->load->view('attendance/summary',$data);   
+    }
+    
+
+}

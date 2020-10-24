@@ -1,0 +1,40 @@
+<?php
+defined( 'BASEPATH' )OR exit( 'No direct script access allowed' );
+class Attendance extends CIUIS_Controller {
+
+	public function  __construct() {
+        parent::__construct();
+        $this->load->model("Attendance_Model");
+        $this->load->helper('security');     
+    }
+
+	function index() {
+		$data[ 'title' ] = lang( 'staff' );
+		$current_date = date('Y-m-d');
+		$data['attendance'] = $this->Attendance_Model->get_attendance($current_date);
+		$data['attendance_date'] = $current_date;
+		$this->load->view( 'attendance/index', $data );
+	} 
+
+	function month() {
+		$data[ 'title' ] = lang( 'staff' );
+		$current_date = date('Y-m-d');
+		$data['attendance_date'] = $current_date;
+		$data['staff'] = $this->Attendance_Model->get_staff();
+		$this->load->view( 'attendance/month', $data );
+	} 
+
+   	public function create() {
+    	if($this->input->server("REQUEST_METHOD")=="POST"){ 
+
+					$data = $this->input->post() ;
+					$this->Attendance_Model->save($data);
+					$this->session->set_flashdata('message', 'Successfully Created');
+					redirect('admin/banner', 'refresh');
+        }
+     	$data['title']="Attendance Entry";
+        $this->load->view( 'attendance/create', $data );
+        
+    }
+
+}

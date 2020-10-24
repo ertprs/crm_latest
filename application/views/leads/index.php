@@ -364,7 +364,7 @@
                       <!--- <div class="box-header text-uppercase text-bold">Open</div>--->
                        <div class="box-content custom-icon whiteBack">
                          <div class="imgDivMain">
-							<img src="/uploads/images/icons/red_image.png" class="img-responsive">
+							<img src="<?php echo base_url();?>uploads/images/icons/red_image.png" class="img-responsive">
 							<img src="/uploads/images/icons/tap.png" class="img-responsive imgAnimate">
 							<div class=" posR">
 								<div class="dbox__body posA"><span class="dbox__title">Open</span> </div> 

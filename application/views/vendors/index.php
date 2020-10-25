@@ -1,4 +1,4 @@
-<?php include_once(APPPATH . 'views/inc/ciuis_data_table_header.php'); ?>
+<?php include_once(APPPATH . 'views/inc/ciuis_data_table_header.php');//sasa ?>
 <?php $appconfig = get_appconfig(); ?>
 <div class="ciuis-body-content" ng-controller="Vendors_Controller">
 	<style type="text/css">
